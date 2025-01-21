@@ -1,13 +1,11 @@
-import torch
-import torchaudio
 from pydub import AudioSegment, silence
-from pydub.utils import mediainfo
 import io
+from typing import List, Tuple, Dict
 
 # Ensure ffmpeg is set as the audio backend
 AudioSegment.converter = "ffmpeg"
 
-def process_audio(file):
+def process_audio(file: str) -> Tuple[List[bytes], List[Dict[str, int]]]:
     try:
         audio = AudioSegment.from_file(file)
     except Exception as e:
@@ -16,16 +14,16 @@ def process_audio(file):
     # Detect non-silent chunks
     nonsilent_ranges = silence.detect_nonsilent(audio, min_silence_len=750, silence_thresh=-40)
     
-    # Adjust the end time of each chunk to the start time of the next chunk
-    for i in range(len(nonsilent_ranges) - 1):
-        nonsilent_ranges[i][1] = nonsilent_ranges[i + 1][0]
+    # Adjust the start time of each chunk to the start time of the previous chunk, except for the first chunk
+    for i in range(1, len(nonsilent_ranges)):
+        nonsilent_ranges[i][0] = nonsilent_ranges[i - 1][0]
     
     # Split audio based on adjusted non-silent ranges
     audio_chunks = [audio[start:end] for start, end in nonsilent_ranges]
     
     # Convert audio chunks to .wav files and collect timestamps
-    wav_chunks = []
-    timestamps = []
+    wav_chunks: List[bytes] = []
+    timestamps: List[Dict[str, int]] = []
     for i, (start, end) in enumerate(nonsilent_ranges):
         chunk = audio[start:end]
         wav_io = io.BytesIO()
