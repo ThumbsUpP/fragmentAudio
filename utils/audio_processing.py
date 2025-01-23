@@ -14,9 +14,9 @@ def process_audio(file: str) -> Tuple[List[bytes], List[Dict[str, int]]]:
     # Detect non-silent chunks
     nonsilent_ranges = silence.detect_nonsilent(audio, min_silence_len=750, silence_thresh=-40)
     
-    # Adjust the start time of each chunk to the start time of the previous chunk, except for the first chunk
-    for i in range(1, len(nonsilent_ranges)):
-        nonsilent_ranges[i][0] = nonsilent_ranges[i - 1][0]
+    # Adjust the end time of each chunk to the start time of the next chunk
+    for i in range(len(nonsilent_ranges) - 1):
+        nonsilent_ranges[i][1] = nonsilent_ranges[i + 1][0]
     
     # Split audio based on adjusted non-silent ranges
     audio_chunks = [audio[start:end] for start, end in nonsilent_ranges]
