@@ -1,14 +1,20 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import multer from 'multer';
+import { handleUpload } from './uploadController';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.WHISPER_PORT || 3001;
 
+const upload = multer({ dest: 'uploads/' });
+
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
+
+app.post('/upload', upload.single('zipfile'), handleUpload);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
