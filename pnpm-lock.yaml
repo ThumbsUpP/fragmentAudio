@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
     devDependencies:
       ts-node-dev:
         specifier: ^2.0.0
@@ -18,6 +22,25 @@ importers:
   apps/fragmentAudio: {}
 
   apps/server:
+    dependencies:
+      express:
+        specifier: ^4.17.1
+        version: 4.21.2
+    devDependencies:
+      '@types/express':
+        specifier: ^4.17.13
+        version: 4.17.21
+      '@types/node':
+        specifier: ^16.7.10
+        version: 16.18.125
+      ts-node:
+        specifier: ^10.2.1
+        version: 10.9.2(@types/node@16.18.125)(typescript@4.9.5)
+      typescript:
+        specifier: ^4.4.3
+        version: 4.9.5
+
+  apps/whisperAPI:
     dependencies:
       express:
         specifier: ^4.17.1
@@ -325,6 +348,11 @@ packages:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
     dev: true
+
+  /dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}

@@ -7,6 +7,9 @@ import io
 import tempfile
 import json
 from typing import Union
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -56,4 +59,5 @@ def download_file(filename: str) -> send_file:
     return send_file(os.path.join(tempfile.gettempdir(), filename), as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.getenv('PYDUB_PORT', 5001))
+    app.run(host='0.0.0.0', port=port)

@@ -9,8 +9,8 @@
     "apps/server"
   ],
   "devDependencies": {
-    "turbo": "2.3.4",
-    "ts-node-dev": "^2.0.0"
+    "ts-node-dev": "^2.0.0",
+    "turbo": "2.3.4"
   },
   "scripts": {
     "build": "turbo run build",
@@ -18,5 +18,8 @@
     "test": "turbo run test",
     "start": "turbo run start",
     "dev": "turbo run dev"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }
