@@ -1,0 +1,10 @@
+{
+  "name": "python-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'No build step for Python app'",
+    "lint": "flake8 .",
+    "test": "pytest",
+    "start": "python app.py"
+  }
+}
