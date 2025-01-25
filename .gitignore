@@ -1,3 +1,7 @@
 node_modules/
 .pnpm-debug.log
 .turbo/
+
+# Ignore node_modules in apps and packages
+apps/*/node_modules/
+packages/*/node_modules/
