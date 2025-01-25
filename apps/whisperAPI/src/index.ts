@@ -1,9 +1,6 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import multer from 'multer';
 import { handleUpload } from './uploadController';
-
-dotenv.config();
 
 const app = express();
 const port = process.env.WHISPER_PORT || 3001;
