@@ -10,7 +10,7 @@ const port = process.env.WHISPER_PORT || 3001;
 
 const upload = multer({ dest: 'uploads/' });
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Hello, world!');
 });
 

@@ -9,12 +9,15 @@ interface MulterRequest extends Request {
 
 
 export const handleUpload = async (req: Request, res: Response) => {
-  if (!req.file) {
+  
+  const r = req as MulterRequest
+
+  if (!r.file) {
     return res.status(400).send('No file uploaded.');
   }
 
-  const zipFilePath = req.file.path;
-  const extractPath = path.join(__dirname, 'extracted');
+  const zipFilePath = r.file.path;
+  const extractPath = path.join(__dirname, '../temp/');
 
   try {
     await fs.promises.mkdir(extractPath, { recursive: true });
@@ -25,7 +28,10 @@ export const handleUpload = async (req: Request, res: Response) => {
         const files = await fs.promises.readdir(extractPath);
         res.send(`Files extracted: ${files.join(', ')}`);
       });
-  } catch (err) {
-    res.status(500).send('Error extracting zip file.');
+
+      // delete everything in temp here
+    } catch (err) {
+      res.status(500).send('Error extracting zip file.');
+      // delete everything in temp here
   }
 };
