@@ -7,8 +7,9 @@
     "apps/*",
     "apps/server"
   ],
+  "packageManager": "pnpm@9.15.4+sha256.9bee59c7313a216722c079c1e22160dea7f88df4e0c3450b1d7b01b882336c6a",
   "devDependencies": {
-    "turbo": "^1.0.0",
+    "turbo": "^2.4.0",
     "ts-node-dev": "^2.0.0"
   },
   "scripts": {
@@ -16,6 +17,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "start": "turbo run start",
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "init": "turbo run init"
   }
 }
