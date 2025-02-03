@@ -1,6 +1,9 @@
 node_modules/
 .pnpm-debug.log
 .turbo/
+# Python junks files
+apps/fragmentAudio/venv/
+apps/fragmentAudio/utils/__pycache__/
 
 # Ignore node_modules in apps and packages
 **/node_modules/
