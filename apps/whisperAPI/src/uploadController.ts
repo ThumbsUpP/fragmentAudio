@@ -10,6 +10,8 @@ interface MulterRequest extends Request {
 
 const openai = new OpenAI({
   apiKey: process.env.OPEN_AI_API_KEYS,
+  organization: "org-86EqRxdJbJg4Md8hxB5bBPzQ",
+  project: "proj_1fHZWbaJbDNrZ383QUiQltVw",
 });
 
 export const handleUpload = async (req: Request, res: Response) => {
@@ -23,6 +25,7 @@ export const handleUpload = async (req: Request, res: Response) => {
   const extractPath = path.join(__dirname, '../temp/');
 
   try {
+    console.log({env: process.env.OPEN_AI_API_KEYS})
     await fs.promises.mkdir(extractPath, { recursive: true });
 
     fs.createReadStream(zipFilePath)
@@ -30,22 +33,27 @@ export const handleUpload = async (req: Request, res: Response) => {
       .on('close', async () => {
         const files = await fs.promises.readdir(extractPath);
         const wavFiles = files.filter(file => file.endsWith('.wav'));
+        const filePath = path.join(extractPath, wavFiles[0]);
 
-        const transcriptions = await Promise.all(wavFiles.map(async (file, i) => {
-          if (i !== 0) return
-          const filePath = path.join(extractPath, file);
-          console.log({filePath})
-          const transcription = await openai.audio.transcriptions.create({
-            file: fs.createReadStream(filePath),
-            model: 'whisper-1',
-            language: 'zh',
-            response_format: 'verbose_json',
-            timestamp_granularities: ['word']
-          });
-          return { file, transcription: transcription.words };
-        }));
+        console.log({filePath})
+        const transcription = await openai.audio.transcriptions.create({
+          file: fs.createReadStream(filePath),
+          model: 'whisper-1',
+          // language: 'zh',
+          response_format: 'verbose_json',
+          timestamp_granularities: ['word']
+        }).catch(err => {
+          console.log({err})
+          throw new Error(err)
+        });
+//  const transcriptions = await Promise.all(wavFiles.map(async (file, i) => {
+  //        if (i !== 0) return
 
-        res.send(transcriptions);
+
+      //    return { file, transcription: transcription.words };
+    //    }));
+
+        res.send(transcription);
         // delete everything in temp here
         await fs.promises.rm(extractPath, { recursive: true, force: true });
       });
