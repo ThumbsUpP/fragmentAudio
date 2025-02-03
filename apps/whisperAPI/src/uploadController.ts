@@ -9,8 +9,8 @@ interface MulterRequest extends Request {
 }
 
 const openai = new OpenAI({
-  apiKey: process.env.OPEN_AI_API_KEYS,
-  organization: "org-86EqRxdJbJg4Md8hxB5bBPzQ",
+  // apiKey: process.env.OPENAI_API_KEY, // Ensure this environment variable is correctly set
+  // organization: "org-86EqRxdJbJg4Md8hxB5bBPzQ",
   project: "proj_1fHZWbaJbDNrZ383QUiQltVw",
 });
 
@@ -25,7 +25,6 @@ export const handleUpload = async (req: Request, res: Response) => {
   const extractPath = path.join(__dirname, '../temp/');
 
   try {
-    console.log({env: process.env.OPEN_AI_API_KEYS})
     await fs.promises.mkdir(extractPath, { recursive: true });
 
     fs.createReadStream(zipFilePath)
@@ -35,23 +34,25 @@ export const handleUpload = async (req: Request, res: Response) => {
         const wavFiles = files.filter(file => file.endsWith('.wav'));
         const filePath = path.join(extractPath, wavFiles[0]);
 
-        console.log({filePath})
-        const transcription = await openai.audio.transcriptions.create({
-          file: fs.createReadStream(filePath),
-          model: 'whisper-1',
-          // language: 'zh',
-          response_format: 'verbose_json',
-          timestamp_granularities: ['word']
-        }).catch(err => {
-          console.log({err})
-          throw new Error(err)
-        });
-//  const transcriptions = await Promise.all(wavFiles.map(async (file, i) => {
-  //        if (i !== 0) return
+        let transcription: unknown
+        try {
+          transcription = await openai.audio.transcriptions.create({
+            file: fs.createReadStream(filePath),
+            model: 'whisper-1',
+            language: 'zh',
+            response_format: 'verbose_json',
+            timestamp_granularities: ['word']
+          });
+        } catch (err) {
+          console.error('API call to OpenAI failed', err); // Log the error for more details
+          return res.status(500).send('Error processing transcription.');
+        }
+        //  const transcriptions = await Promise.all(wavFiles.map(async (file, i) => {
+        //        if (i !== 0) return
 
 
-      //    return { file, transcription: transcription.words };
-    //    }));
+        //    return { file, transcription: transcription.words };
+        //    }));
 
         res.send(transcription);
         // delete everything in temp here
