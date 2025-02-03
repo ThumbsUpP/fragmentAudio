@@ -7,3 +7,7 @@ apps/fragmentAudio/utils/__pycache__/
 
 # Ignore node_modules in apps and packages
 **/node_modules/
+
+
+# Ignore mutlr build files
+apps/whisperAPI/uploads/
