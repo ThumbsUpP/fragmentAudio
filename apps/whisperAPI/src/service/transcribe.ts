@@ -2,28 +2,26 @@ import fs from "fs"
 import OpenAI from "openai"
 
 const openai = new OpenAI({
-	// apiKey: process.env.OPENAI_API_KEY, // Ensure this environment variable is correctly set
-	// organization: "org-86EqRxdJbJg4Md8hxB5bBPzQ",
 	project: "proj_1fHZWbaJbDNrZ383QUiQltVw"
 })
 
-type Word = {
+export type Word = {
 	start: number
 	end: number
-	value: string
+	word?: string
 }
 
-export type Transcription = {
-	tasks: string
+export type TranscriptionOutPut = {
+	tasks?: string
 	language: string
-	duration: number
+	duration: string
 	text: string
-	words: Word[]
+	words?: Word[]
 }
 
 export const transcribe = async (
 	filePath: string
-): Promise<OpenAI.Audio.Transcriptions.TranscriptionVerbose> =>
+): Promise<TranscriptionOutPut> =>
 	await openai.audio.transcriptions.create({
 		file: fs.createReadStream(filePath),
 		model: "whisper-1",

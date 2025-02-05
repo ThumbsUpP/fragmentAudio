@@ -1,11 +1,19 @@
 import fs from "fs"
 import path from "path"
 import { Request, Response } from "express"
-import unzipper from "unzipper"
-import { transcribe } from "./service/transcribe"
+import { transcribe, Word } from "./service/transcribe"
+import { extractAndProcessFiles } from "./service/extractAndProcessFiles"
+import { reduceTranscriptions } from "./mapper/transcription"
 
 interface MulterRequest extends Request {
 	file: Express.Multer.File
+}
+
+export type LightTranscription = {
+	text: string
+	duration: string
+	words?: Word[]
+	index: number
 }
 
 export const handleUpload = async (req: Request, res: Response) => {
@@ -16,33 +24,35 @@ export const handleUpload = async (req: Request, res: Response) => {
 	}
 
 	const zipFilePath = r.file.path
-	const extractPath = path.join(__dirname, "../temp/")
+	const tempPath = path.join(__dirname, "../temp/")
+
+	const handler = async () => {
+		const files = await fs.promises.readdir(tempPath)
+		const wavFiles = files.filter((file) => file.endsWith(".wav"))
+		const filePath = wavFiles.map((file) => path.join(tempPath, file))
+
+		let transcriptions: LightTranscription[] = []
+		try {
+			for (const [index, file] of filePath.entries()) {
+				const { words, text, duration } = await transcribe(file)
+				transcriptions.push({ words, text, duration, index })
+			}
+		} catch (err) {
+			throw new Error(`Error while processing transcription : ${err}`)
+		}
+
+		const r = reduceTranscriptions(transcriptions)
+
+		res.send(r)
+		// delete everything in temp here
+		await fs.promises.rm(tempPath, { recursive: true, force: true })
+	}
 
 	try {
-		await fs.promises.mkdir(extractPath, { recursive: true })
-
-		fs.createReadStream(zipFilePath)
-			.pipe(unzipper.Extract({ path: extractPath }))
-			.on("close", async () => {
-				const files = await fs.promises.readdir(extractPath)
-				const wavFiles = files.filter((file) => file.endsWith(".wav"))
-				const filePath = path.join(extractPath, wavFiles[0])
-
-				let transcription: unknown
-				try {
-					transcription = await transcribe(filePath)
-				} catch (err) {
-					console.error("API call to OpenAI failed", err) // Log the error for more details
-					return res.status(500).send("Error processing transcription.")
-				}
-
-				res.send(transcription)
-				// delete everything in temp here
-				await fs.promises.rm(extractPath, { recursive: true, force: true })
-			})
+		await extractAndProcessFiles(zipFilePath, tempPath, handler)
 	} catch (err) {
-		res.status(500).send("Error extracting zip file.")
+		res.status(500).send(err)
 		// delete everything in temp here
-		await fs.promises.rm(extractPath, { recursive: true, force: true })
+		await fs.promises.rm(tempPath, { recursive: true, force: true })
 	}
 }
