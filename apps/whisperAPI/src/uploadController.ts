@@ -1,67 +1,48 @@
-import fs from 'fs';
-import path from 'path';
-import { Request, Response } from 'express';
-import unzipper from 'unzipper';
-import OpenAI from 'openai';
+import fs from "fs"
+import path from "path"
+import { Request, Response } from "express"
+import unzipper from "unzipper"
+import { transcribe } from "./service/transcribe"
 
 interface MulterRequest extends Request {
-  file: Express.Multer.File;
+	file: Express.Multer.File
 }
 
-const openai = new OpenAI({
-  // apiKey: process.env.OPENAI_API_KEY, // Ensure this environment variable is correctly set
-  // organization: "org-86EqRxdJbJg4Md8hxB5bBPzQ",
-  project: "proj_1fHZWbaJbDNrZ383QUiQltVw",
-});
-
 export const handleUpload = async (req: Request, res: Response) => {
-  const r = req as MulterRequest;
+	const r = req as MulterRequest
 
-  if (!r.file) {
-    return res.status(400).send('No file uploaded.');
-  }
+	if (!r.file) {
+		return res.status(400).send("No file uploaded.")
+	}
 
-  const zipFilePath = r.file.path;
-  const extractPath = path.join(__dirname, '../temp/');
+	const zipFilePath = r.file.path
+	const extractPath = path.join(__dirname, "../temp/")
 
-  try {
-    await fs.promises.mkdir(extractPath, { recursive: true });
+	try {
+		await fs.promises.mkdir(extractPath, { recursive: true })
 
-    fs.createReadStream(zipFilePath)
-      .pipe(unzipper.Extract({ path: extractPath }))
-      .on('close', async () => {
-        const files = await fs.promises.readdir(extractPath);
-        const wavFiles = files.filter(file => file.endsWith('.wav'));
-        const filePath = path.join(extractPath, wavFiles[0]);
+		fs.createReadStream(zipFilePath)
+			.pipe(unzipper.Extract({ path: extractPath }))
+			.on("close", async () => {
+				const files = await fs.promises.readdir(extractPath)
+				const wavFiles = files.filter((file) => file.endsWith(".wav"))
+				const filePath = path.join(extractPath, wavFiles[0])
 
-        let transcription: unknown
-        try {
-          transcription = await openai.audio.transcriptions.create({
-            file: fs.createReadStream(filePath),
-            model: 'whisper-1',
-            language: 'zh',
-            response_format: 'verbose_json',
-            timestamp_granularities: ['word']
-          });
-        } catch (err) {
-          console.error('API call to OpenAI failed', err); // Log the error for more details
-          return res.status(500).send('Error processing transcription.');
-        }
-        //  const transcriptions = await Promise.all(wavFiles.map(async (file, i) => {
-        //        if (i !== 0) return
+				let transcription: unknown
+				try {
+					transcription = await transcribe(filePath)
+				} catch (err) {
+					console.error("API call to OpenAI failed", err) // Log the error for more details
+					return res.status(500).send("Error processing transcription.")
+				}
 
-
-        //    return { file, transcription: transcription.words };
-        //    }));
-
-        res.send(transcription);
-        // delete everything in temp here
-        await fs.promises.rm(extractPath, { recursive: true, force: true });
-      });
-
-  } catch (err) {
-    res.status(500).send('Error extracting zip file.');
-    // delete everything in temp here
-    await fs.promises.rm(extractPath, { recursive: true, force: true });
-  }
-};
+				res.send(transcription)
+				// delete everything in temp here
+				await fs.promises.rm(extractPath, { recursive: true, force: true })
+			})
+	} catch (err) {
+		res.status(500).send("Error extracting zip file.")
+		// delete everything in temp here
+		await fs.promises.rm(extractPath, { recursive: true, force: true })
+	}
+}
