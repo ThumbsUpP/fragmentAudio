@@ -12,7 +12,7 @@ def process_audio(file: str) -> Tuple[List[bytes], List[Dict[str, int]]]:
         raise ValueError(f"Decoding failed: {str(e)}")
     
     # Detect non-silent chunks
-    nonsilent_ranges = silence.detect_nonsilent(audio, min_silence_len=750, silence_thresh=-40)
+    nonsilent_ranges = silence.detect_nonsilent(audio, min_silence_len=500, silence_thresh=-40)
     
     # Adjust the start time of each chunk to the end time of the previous chunk
     output_ranges = []
@@ -24,10 +24,27 @@ def process_audio(file: str) -> Tuple[List[bytes], List[Dict[str, int]]]:
             tuple_range = (nonsilent_ranges[i-1][1], end)
         output_ranges.append(tuple_range)
     
+    # Ensure chunks are within the desired length constraints
+    min_length = 5000  # 5 seconds in milliseconds
+    max_length = 30000  # 30 seconds in milliseconds
+    constrained_ranges = []
+    i = 0
+    while i < len(output_ranges):
+        start, end = output_ranges[i]
+        while end - start < min_length and i < len(output_ranges) - 1:
+            next_start, next_end = output_ranges[i + 1]
+            if next_end - start <= max_length:
+                end = next_end
+                i += 1
+            else:
+                break
+        constrained_ranges.append((start, end))
+        i += 1
+    
     # Convert audio chunks to .wav files and collect timestamps
     wav_chunks: List[bytes] = []
     timestamps: List[Dict[str, int]] = []
-    for i, (start, end) in enumerate(output_ranges):
+    for i, (start, end) in enumerate(constrained_ranges):
         chunk = audio[start:end]
         wav_io = io.BytesIO()
         chunk.export(wav_io, format="wav")
