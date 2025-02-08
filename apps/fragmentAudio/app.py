@@ -18,6 +18,23 @@ ALLOWED_EXTENSIONS = {'wav', 'mp3', 'ogg'}
 def allowed_file(filename: str) -> bool:
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+def save_file(file) -> str:
+    filename = secure_filename(file.filename)
+    file_path = os.path.join('/tmp', filename)
+    file.save(file_path)
+    return file_path
+
+def create_zip_file(audio_chunks, timestamps) -> str:
+    temp_dir = tempfile.gettempdir()
+    zip_path = os.path.join(temp_dir, 'audio_chunks.zip')
+    with zipfile.ZipFile(zip_path, 'w') as zf:
+        for i, chunk in enumerate(audio_chunks):
+            chunk_filename = f'chunk_{i}.wav'
+            zf.writestr(chunk_filename, chunk)
+        json_data = json.dumps(timestamps)
+        zf.writestr('timestamps.json', json_data)
+    return zip_path
+
 @app.route('/process', methods=['POST'])
 def process() -> Union[jsonify, tuple]:
     if 'file' not in request.files:
@@ -28,9 +45,7 @@ def process() -> Union[jsonify, tuple]:
     if not allowed_file(file.filename):
         return jsonify({'error': 'File type not allowed'}), 400
 
-    filename = secure_filename(file.filename)
-    file_path = os.path.join('/tmp', filename)
-    file.save(file_path)
+    file_path = save_file(file)
     
     # Print the file size
     file_size = os.path.getsize(file_path)
@@ -38,17 +53,7 @@ def process() -> Union[jsonify, tuple]:
     
     try:
         audio_chunks, timestamps = process_audio(file_path)
-        # Create a zip file in a temporary directory
-        temp_dir = tempfile.gettempdir()
-        zip_path = os.path.join(temp_dir, 'audio_chunks.zip')
-        with zipfile.ZipFile(zip_path, 'w') as zf:
-            for i, chunk in enumerate(audio_chunks):
-                chunk_filename = f'chunk_{i}.wav'
-                zf.writestr(chunk_filename, chunk)
-            # Add the JSON file with timestamps
-            json_data = json.dumps(timestamps)
-            zf.writestr('timestamps.json', json_data)
-        
+        zip_path = create_zip_file(audio_chunks, timestamps)
         download_url = url_for('download_file', filename='audio_chunks.zip', _external=True)
         return jsonify({'download_url': download_url})
     except Exception as e:

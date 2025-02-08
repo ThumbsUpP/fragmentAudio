@@ -1,12 +1,13 @@
 {
-  "name": "python-app",
+  "name": "pydub-app",
   "version": "1.0.0",
   "scripts": {
+    "venv": "bash -c 'source venv/bin/activate'",
     "build": "echo 'No build step for Python app'",
     "lint": "flake8 .",
     "test": "pytest",
     "start": "python app.py",
-    "init": "pip install -r requirements.txt",
+    "installPython": "pip install -r requirements.txt",
     "dev": "python app.py"
   }
 }
