@@ -16,6 +16,25 @@ export type LightTranscription = {
 	index: number
 }
 
+export type ShortWord = {
+	s: number
+	e: number
+	w?: string
+}
+
+export type ShortenTranscriptions = {
+	t: string
+	d: number
+	ws?: ShortWord[]
+	i: number
+}
+
+export type TranscriptionResponse = { 
+	counter: number;
+	transcriptions: ShortenTranscriptions[];
+}
+
+
 export const handleUpload = async (req: Request, res: Response) => {
 	const r = req as MulterRequest
 
@@ -42,7 +61,7 @@ export const handleUpload = async (req: Request, res: Response) => {
 			throw new Error(`Error while processing transcription : ${err}`)
 		}
 
-		const r = reduceTranscriptions(transcriptions)
+		const r: TranscriptionResponse = reduceTranscriptions(transcriptions)
 
 		res.send(r)
 		// delete everything in temp here

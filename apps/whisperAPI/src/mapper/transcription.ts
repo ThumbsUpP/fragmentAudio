@@ -1,5 +1,5 @@
 import { Word } from "../service/transcribe"
-import { LightTranscription } from "../uploadController"
+import { LightTranscription, ShortenTranscriptions, TranscriptionResponse } from "../uploadController"
 
 export const mapWord = (word: Word): Word => {
 	return {
@@ -11,7 +11,7 @@ export const mapWord = (word: Word): Word => {
 
 export const reduceTranscriptions = (
 	transcriptions: LightTranscription[]
-): any =>
+): TranscriptionResponse =>
 	transcriptions.reduce(
 		(acc, transcription, index) => {
 			if (!transcription || !transcription.words) return acc
@@ -22,24 +22,24 @@ export const reduceTranscriptions = (
 
 			const mappedWords = transcription.words.map(mapWord).map((word) => {
 				return {
-					start: Math.floor(word.start + acc.counter),
-					end: Math.floor(word.end + acc.counter),
-					word: word.word
+					s: Math.floor(word.start + acc.counter),
+					e: Math.floor(word.end + acc.counter),
+					w: word.word
 				}
 			})
 
 			return {
 				counter: acc.counter + duration,
 				transcriptions: acc.transcriptions.concat({
-					text: transcription.text,
-					duration: Math.floor(duration),
-					words: mappedWords,
-					index
+					t: transcription.text,
+					d: Math.floor(duration),
+					ws: mappedWords,
+					i: index
 				})
 			}
 		},
 		{
 			counter: 0,
-			transcriptions: [] as LightTranscription[]
+			transcriptions: [] as ShortenTranscriptions[]
 		}
 	)
