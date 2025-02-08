@@ -11,7 +11,7 @@ interface MulterRequest extends Request {
 
 export type LightTranscription = {
 	text: string
-	duration: string
+	duration: number
 	words?: Word[]
 	index: number
 }
@@ -35,7 +35,8 @@ export const handleUpload = async (req: Request, res: Response) => {
 		try {
 			for (const [index, file] of filePath.entries()) {
 				const { words, text, duration } = await transcribe(file)
-				transcriptions.push({ words, text, duration, index })
+				transcriptions.push({ words, text, duration: parseFloat(duration), index })
+				console.log({ words, text, duration, index })
 			}
 		} catch (err) {
 			throw new Error(`Error while processing transcription : ${err}`)
