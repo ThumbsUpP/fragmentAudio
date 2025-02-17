@@ -4,10 +4,8 @@ import { Request, Response } from "express"
 import { transcribe, Word } from "./service/transcribe"
 import { extractAndProcessFiles } from "./service/extractAndProcessFiles"
 import { reduceTranscriptions } from "./mapper/transcription"
+import { MulterRequest } from "./interfaces"
 
-interface MulterRequest extends Request {
-	file: Express.Multer.File
-}
 
 export type LightTranscription = {
 	text: string
