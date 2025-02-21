@@ -1,0 +1,13 @@
+{
+  "name": "stable-ts",
+  "version": "1.0.0",
+  "scripts": {
+    "venv": "bash -c 'source venv/bin/activate'",
+    "build": "echo 'No build step for Python app'",
+    "lint": "flake8 .",
+    "test": "pytest",
+    "start": "python app.py",
+    "installPython": "pip install -r requirements.txt",
+    "dev": "bash -c 'source venv/bin/activate && venv/bin/python app.py'"
+  }
+}

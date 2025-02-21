@@ -21,6 +21,8 @@ importers:
 
   apps/pydubApp: {}
 
+  apps/stable-ts: {}
+
   apps/whisperAPI:
     dependencies:
       express:

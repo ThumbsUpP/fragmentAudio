@@ -1,0 +1,6 @@
+Flask
+stable-ts
+torch
+torchaudio
+pysrt
+jieba
