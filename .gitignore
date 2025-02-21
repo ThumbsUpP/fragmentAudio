@@ -2,8 +2,8 @@ node_modules/
 .pnpm-debug.log
 .turbo/
 # Python junks files
-apps/pydubApp/venv/
-apps/pydubApp/utils/__pycache__/
+apps/*/venv/
+apps/*/utils/__pycache__/
 
 # Ignore node_modules in apps and packages
 **/node_modules/
