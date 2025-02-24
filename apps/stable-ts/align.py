@@ -56,9 +56,20 @@ def align_audio_with_srt(audio_path, srt_path):
 
         # Align the audio chunk with the text using stable-ts
         result = model.align(chunk, text, language='zh')
+        
+        print(result.to_srt_vtt())
 
         # Extract character-level timestamps from alignment
-        char_timestamps = [(wt.start, wt.end) for wt in result.words]
+        if hasattr(result, 'all_words'):
+            char_timestamps = [(wt.start, wt.end) for wt in result.all_words()]
+            print(char_timestamps)
+        else:
+            print(f"Warning: No 'all_words' attribute in result for segment {sub.index}")
+            continue
+
+        # Debugging: Print character timestamps and words
+        print(f"Character timestamps for segment {sub.index}: {char_timestamps}")
+        print(f"Words for segment {sub.index}: {list(jieba.cut(text))}")
 
         # Segment the text into words using jieba
         words = list(jieba.cut(text))

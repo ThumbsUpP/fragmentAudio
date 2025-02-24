@@ -13,6 +13,9 @@ def stable_ts():
     audio_file = request.files['audio']
     srt_file = request.files['srt']
 
+    print(f"Received audio file: {audio_file.filename}")
+    print(f"Received SRT file: {srt_file.filename}")
+
     audio_path = os.path.join('/tmp', audio_file.filename)
     srt_path = os.path.join('/tmp', srt_file.filename)
 
