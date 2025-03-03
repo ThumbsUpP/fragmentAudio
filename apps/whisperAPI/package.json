@@ -5,7 +5,6 @@
   "scripts": {
     "build": "tsc",
     "start": "dotenvx run -- ts-node src/index.ts",
-    "dev": "dotenvx run -f ../../.env -- ts-node-dev src/index.ts",
     "types": "tsc --noEmit"
   },
   "dependencies": {
