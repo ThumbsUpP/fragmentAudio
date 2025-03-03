@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # Database service
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: videodb
+      POSTGRES_PASSWORD: videodb
+      POSTGRES_DB: videodb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U videodb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Video Database API service
+  video-db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://videodb:videodb@postgres:5432/videodb
+      - PORT=3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
