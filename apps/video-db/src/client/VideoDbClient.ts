@@ -8,6 +8,26 @@ interface ErrorResponse {
   message?: string;
 }
 
+export interface Word {
+  word: string;
+  start: number;
+  end: number;
+}
+
+export interface Subtitle {
+  text: string;
+  start: number;
+  end: number;
+  words: Word[];
+}
+
+export interface SubtitlesResponse {
+  id: string;
+  videoId: string;
+  videoUrl: string;
+  jsonData: Subtitle[];
+}
+
 export class VideoDbClient {
   private baseUrl: string;
 
@@ -23,10 +43,10 @@ export class VideoDbClient {
    * Save video data to the database
    * @param videoId Unique identifier for the video
    * @param videoUrl URL of the video
-   * @param jsonData JSON data to store
+   * @param jsonData JSON data to store (array of subtitles)
    * @returns The saved video data
    */
-  async saveVideoData(videoId: string, videoUrl: string, jsonData: any): Promise<any> {
+  async saveVideoData(videoId: string, videoUrl: string, jsonData: Subtitle[]) {
     const response = await fetch(this.baseUrl, {
       method: "POST",
       headers: {
@@ -44,7 +64,7 @@ export class VideoDbClient {
       throw new Error(`Failed to save video data: ${errorData.error || response.statusText}`);
     }
 
-    return response.json();
+    return response.json() as unknown;
   }
 
   /**
@@ -52,7 +72,7 @@ export class VideoDbClient {
    * @param videoId The video ID to search for
    * @returns The video data or null if not found
    */
-  async getVideoDataById(videoId: string): Promise<any> {
+  async getVideoDataById(videoId: string): Promise<SubtitlesResponse | null> {
     const response = await fetch(`${this.baseUrl}/${videoId}`);
 
     if (response.status === 404) {
@@ -64,14 +84,14 @@ export class VideoDbClient {
       throw new Error(`Failed to get video data: ${errorData.error || response.statusText}`);
     }
 
-    return response.json();
+    return response.json() as Promise<SubtitlesResponse>;
   }
 
   /**
    * Get all video data entries
    * @returns Array of all video data
    */
-  async getAllVideoData(): Promise<any[]> {
+  async getAllVideoData(): Promise<SubtitlesResponse[]> {
     const response = await fetch(this.baseUrl);
 
     if (!response.ok) {
@@ -79,7 +99,7 @@ export class VideoDbClient {
       throw new Error(`Failed to get all video data: ${errorData.error || response.statusText}`);
     }
 
-    return response.json() as Promise<any[]>;
+    return response.json() as Promise<SubtitlesResponse[]>;
   }
 
   /**

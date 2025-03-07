@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { initializeDatabase } from "./data-source";
-import videoRoutes from "./routes/videoRoutes";
+import { initializeDatabase } from "./data-source.js";
+import videoRoutes from "./routes/videoRoutes.js";
+import translationRoutes from "./routes/translationRoutes.js";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -27,6 +28,8 @@ app.get("/health", (_req, res) => {
 
 // API routes
 app.use("/api/videos", videoRoutes);
+// Use the video routes for translations as well since they're nested under videos
+app.use("/api/videos", translationRoutes);
 
 // Start the server
 const startServer = async () => {
@@ -38,6 +41,7 @@ const startServer = async () => {
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
       console.log(`Video database API available at http://localhost:${PORT}/api/videos`);
+      console.log(`Translation API available at http://localhost:${PORT}/api/videos/:videoId/translations`);
     });
   } catch (error) {
     console.error("Failed to start server:", error);

@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { VideoDataService } from "../service/VideoDataService";
+import { VideoDataService } from "../service/VideoDataService.js";
 
 const router = Router();
 const videoDataService = new VideoDataService();

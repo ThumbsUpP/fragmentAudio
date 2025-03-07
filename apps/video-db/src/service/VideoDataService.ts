@@ -1,6 +1,6 @@
 import { Repository } from "typeorm";
-import { VideoData } from "../entity/VideoData";
-import { AppDataSource } from "../data-source";
+import { VideoData } from "../entity/VideoData.js";
+import { AppDataSource } from "../data-source.js";
 
 export class VideoDataService {
   private repository: Repository<VideoData>;

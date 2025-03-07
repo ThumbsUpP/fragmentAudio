@@ -1,5 +1,6 @@
 import { DataSource, DataSourceOptions } from "typeorm";
-import { VideoData } from "./entity/VideoData";
+import { VideoData } from "./entity/VideoData.js";
+import { TranslationData } from "./entity/TranslationData.js";
 import * as dotenv from "dotenv";
 
 // Load environment variables
@@ -14,7 +15,7 @@ const postgresConfig: DataSourceOptions = {
   url: dbUrl,
   synchronize: true,
   logging: false,
-  entities: [VideoData],
+  entities: [VideoData, TranslationData],
   migrations: [],
   subscribers: [],
 };
@@ -24,7 +25,7 @@ const sqliteConfig: DataSourceOptions = {
   database: "./data/database.sqlite",
   synchronize: true,
   logging: false,
-  entities: [VideoData],
+  entities: [VideoData, TranslationData],
   migrations: [],
   subscribers: [],
 };
