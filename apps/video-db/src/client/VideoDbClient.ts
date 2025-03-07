@@ -9,98 +9,98 @@ interface ErrorResponse {
 }
 
 export class VideoDbClient {
-    private baseUrl: string;
+  private baseUrl: string;
 
-    /**
-     * Create a new VideoDbClient
-     * @param baseUrl The base URL of the video database service
-     */
-    constructor(baseUrl: string = 'http://localhost:3000/api/videos') {
-        this.baseUrl = baseUrl;
+  /**
+   * Create a new VideoDbClient
+   * @param baseUrl The base URL of the video database service
+   */
+  constructor(baseUrl: string = "http://localhost:3000/api/videos") {
+    this.baseUrl = baseUrl;
+  }
+
+  /**
+   * Save video data to the database
+   * @param videoId Unique identifier for the video
+   * @param videoUrl URL of the video
+   * @param jsonData JSON data to store
+   * @returns The saved video data
+   */
+  async saveVideoData(videoId: string, videoUrl: string, jsonData: any): Promise<any> {
+    const response = await fetch(this.baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        videoId,
+        videoUrl,
+        jsonData,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = (await response.json()) as ErrorResponse;
+      throw new Error(`Failed to save video data: ${errorData.error || response.statusText}`);
     }
 
-    /**
-     * Save video data to the database
-     * @param videoId Unique identifier for the video
-     * @param videoUrl URL of the video
-     * @param jsonData JSON data to store
-     * @returns The saved video data
-     */
-    async saveVideoData(videoId: string, videoUrl: string, jsonData: any): Promise<any> {
-        const response = await fetch(this.baseUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                videoId,
-                videoUrl,
-                jsonData
-            })
-        });
+    return response.json();
+  }
 
-        if (!response.ok) {
-            const errorData = await response.json() as ErrorResponse;
-            throw new Error(`Failed to save video data: ${errorData.error || response.statusText}`);
-        }
+  /**
+   * Get video data by videoId
+   * @param videoId The video ID to search for
+   * @returns The video data or null if not found
+   */
+  async getVideoDataById(videoId: string): Promise<any> {
+    const response = await fetch(`${this.baseUrl}/${videoId}`);
 
-        return response.json();
+    if (response.status === 404) {
+      return null;
     }
 
-    /**
-     * Get video data by videoId
-     * @param videoId The video ID to search for
-     * @returns The video data or null if not found
-     */
-    async getVideoDataById(videoId: string): Promise<any> {
-        const response = await fetch(`${this.baseUrl}/${videoId}`);
-
-        if (response.status === 404) {
-            return null;
-        }
-
-        if (!response.ok) {
-            const errorData = await response.json() as ErrorResponse;
-            throw new Error(`Failed to get video data: ${errorData.error || response.statusText}`);
-        }
-
-        return response.json();
+    if (!response.ok) {
+      const errorData = (await response.json()) as ErrorResponse;
+      throw new Error(`Failed to get video data: ${errorData.error || response.statusText}`);
     }
 
-    /**
-     * Get all video data entries
-     * @returns Array of all video data
-     */
-    async getAllVideoData(): Promise<any[]> {
-        const response = await fetch(this.baseUrl);
+    return response.json();
+  }
 
-        if (!response.ok) {
-            const errorData = await response.json() as ErrorResponse;
-            throw new Error(`Failed to get all video data: ${errorData.error || response.statusText}`);
-        }
+  /**
+   * Get all video data entries
+   * @returns Array of all video data
+   */
+  async getAllVideoData(): Promise<any[]> {
+    const response = await fetch(this.baseUrl);
 
-        return response.json() as Promise<any[]>;
+    if (!response.ok) {
+      const errorData = (await response.json()) as ErrorResponse;
+      throw new Error(`Failed to get all video data: ${errorData.error || response.statusText}`);
     }
 
-    /**
-     * Delete video data by videoId
-     * @param videoId The video ID to delete
-     * @returns True if deleted, false if not found
-     */
-    async deleteVideoData(videoId: string): Promise<boolean> {
-        const response = await fetch(`${this.baseUrl}/${videoId}`, {
-            method: 'DELETE'
-        });
+    return response.json() as Promise<any[]>;
+  }
 
-        if (response.status === 404) {
-            return false;
-        }
+  /**
+   * Delete video data by videoId
+   * @param videoId The video ID to delete
+   * @returns True if deleted, false if not found
+   */
+  async deleteVideoData(videoId: string): Promise<boolean> {
+    const response = await fetch(`${this.baseUrl}/${videoId}`, {
+      method: "DELETE",
+    });
 
-        if (!response.ok) {
-            const errorData = await response.json() as ErrorResponse;
-            throw new Error(`Failed to delete video data: ${errorData.error || response.statusText}`);
-        }
-
-        return true;
+    if (response.status === 404) {
+      return false;
     }
+
+    if (!response.ok) {
+      const errorData = (await response.json()) as ErrorResponse;
+      throw new Error(`Failed to delete video data: ${errorData.error || response.statusText}`);
+    }
+
+    return true;
+  }
 }
