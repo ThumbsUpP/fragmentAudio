@@ -3,6 +3,7 @@ import torchaudio
 import pysrt
 import json
 import torch
+import uuid
 
 def align_audio_with_srt(audio_path, srt_path):
     """
@@ -68,7 +69,10 @@ def align_audio_with_srt(audio_path, srt_path):
         # Align the audio chunk with the text using stable-ts
         result = model.align(chunk, text, language='zh')
         
-        segment_words = {"text": text, "start": start_time, "end": end_time, "words": []}
+        # Generate a unique UUID for this segment
+        segment_id = str(uuid.uuid4())
+        
+        segment_words = {"id": segment_id, "text": text, "start": start_time, "end": end_time, "words": []}
         all_words = []  
         # Use aligned segments directly from the result
         if hasattr(result, 'all_words'):
