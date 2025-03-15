@@ -1,0 +1,6 @@
+[2025-03-15T16:25:08.870Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-15T16:25:08.873Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-15T16:25:08.873Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-15T16:27:16.624Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-15T16:27:16.625Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-15T16:27:16.625Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
