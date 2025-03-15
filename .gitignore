@@ -5,6 +5,8 @@ node_modules/
 apps/*/venv/
 apps/*/utils/__pycache__/
 
+apps/*/dist/
+
 # Ignore node_modules in apps and packages
 **/node_modules/
 
