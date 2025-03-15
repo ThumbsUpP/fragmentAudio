@@ -1,40 +1,9 @@
 from flask import Flask, request, jsonify
 from align import align_audio_with_srt
 import os
-import requests
-import json
 from urllib.parse import urlparse
 
 app = Flask(__name__)
-
-# Configure the video-db service URL
-VIDEO_DB_URL = os.environ.get('VIDEO_DB_URL', 'http://localhost:3000/api/videos')
-
-def save_to_video_db(video_id, video_url, json_data):
-    """Save the alignment results to the video-db service"""
-    try:
-        response = requests.post(
-            VIDEO_DB_URL,
-            json={
-                'videoId': video_id,
-                'videoUrl': video_url,
-                'jsonData': json_data
-            },
-            headers={'Content-Type': 'application/json'}
-        )
-        
-        if response.status_code in (200, 201):
-            print(f"Successfully saved data for video ID: {video_id}")
-            return response.json()
-        else:
-            print(f"Failed to save data. Status code: {response.status_code}")
-            print(f"Response: {response.text}")
-            return None
-    except Exception as e:
-        print(f"Error saving to video-db: {str(e)}")
-        return None
-
-# Function removed as per user request to not extract videoId from videoUrl
 
 @app.route('/stable-ts', methods=['POST'])
 def stable_ts():
@@ -71,23 +40,13 @@ def stable_ts():
 
     # Generate alignment
     output_json = align_audio_with_srt(audio_path, srt_path)
-    
-    # Save to video-db only if we have both videoId and videoUrl
-    db_response = None
-    if video_id and video_url:
-        db_response = save_to_video_db(video_id, video_url, output_json)
-    
     # Return the alignment results along with database save status
     response = {
-        "alignment": output_json,
+        "segments": output_json,
         "videoId": video_id,
         "videoUrl": video_url,
-        "savedToDb": db_response is not None
     }
-    
-    if db_response:
-        response["dbRecord"] = db_response
-        
+
     return jsonify(response)
 
 if __name__ == "__main__":
