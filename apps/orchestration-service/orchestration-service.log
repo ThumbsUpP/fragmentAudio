@@ -4,3 +4,23 @@
 [2025-03-15T16:27:16.624Z] [OrchestrationService] [INFO]: Server running on port 4001
 [2025-03-15T16:27:16.625Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
 [2025-03-15T16:27:16.625Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-15T16:38:17.278Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-15T16:38:17.279Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-15T16:38:17.279Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-15T16:40:50.839Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-15T16:40:50.839Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-15T16:40:50.839Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-15T16:41:06.760Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-17T07:24:43.434Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-17T07:24:43.436Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-17T07:24:43.436Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-17T07:24:51.476Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-17T07:25:11.725Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-17T07:25:31.814Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-17T07:25:31.815Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-17T07:25:31.815Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-17T07:25:45.874Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-17T07:33:28.180Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-17T07:33:28.180Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-17T07:33:28.180Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-17T07:33:33.461Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1

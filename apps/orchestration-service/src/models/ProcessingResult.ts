@@ -19,7 +19,7 @@ export interface ProcessingResult {
   /**
    * The result of the alignment process
    */
-  alignmentResult: AlignmentResult;
+  alignmentResult?: AlignmentResult;
   
   /**
    * Optional result of the translation process

@@ -50,7 +50,7 @@ export class OrchestrationService {
         status: "success"
       };
       
-      // Step 2: Translate if requested
+/*       // Step 2: Translate if requested
       if (request.targetLanguage) {
         try {
           this.logger.info(`Step 2: Translating to ${request.targetLanguage}`);
@@ -78,7 +78,7 @@ export class OrchestrationService {
           processingResult.status = "partial_success";
           processingResult.error = `Alignment succeeded but translation failed: ${(error as Error).message}`;
         }
-      }
+      } */
       
       this.logger.info(`Processing completed for video ID: ${request.videoId}`);
       return processingResult;
@@ -89,12 +89,6 @@ export class OrchestrationService {
       return {
         videoId: request.videoId,
         videoUrl: request.videoUrl,
-        alignmentResult: {
-          alignment: null,
-          videoId: request.videoId,
-          videoUrl: request.videoUrl,
-          savedToDb: false
-        },
         completedAt: new Date().toISOString(),
         status: "failed",
         error: `Processing failed: ${(error as Error).message}`
@@ -167,7 +161,7 @@ export class OrchestrationService {
       videoId: request.videoId,
       videoUrl: request.videoUrl,
       alignmentResult: {
-        alignment: null,
+        alignment: undefined,
         videoId: request.videoId,
         videoUrl: request.videoUrl,
         savedToDb: false
