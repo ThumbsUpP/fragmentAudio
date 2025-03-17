@@ -79,19 +79,20 @@ def align_audio_with_srt(audio_path, srt_path):
         if hasattr(result, 'all_words'):
             for wt in result.all_words():
                 word_text = getattr(wt, "word", "")
+                word_text = word_text.strip()
                 # Generate pinyin for the word
                 word_pinyin = ""
                 if word_text.strip():
                     # Convert Chinese characters to pinyin
                     py_list = pinyin(word_text, style=Style.TONE)
-                    # Flatten the list and join with spaces
-                    word_pinyin = " ".join([item[0] for item in py_list])
+                    # Join without spaces for single characters, preserve original structure
+                    word_pinyin = "".join([item[0] for item in py_list])
                 
                 all_words.append({
                     "word": word_text,
                     "pinyin": word_pinyin,
-                    "start": wt.start + start_time,
-                    "end": wt.end + start_time
+                    "start": round(wt.start + start_time, 2),
+                    "end": round(wt.end + start_time, 2)
                 })
         else:
             print(f"Warning: No 'all_words' attribute in result for segment {sub.index}")
