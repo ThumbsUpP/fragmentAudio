@@ -10,6 +10,8 @@ apps/*/dist/
 # Ignore node_modules in apps and packages
 **/node_modules/
 
-
 # Ignore mutlr build files
 apps/whisperAPI/uploads/
+
+# Ignore logs
+*.log
