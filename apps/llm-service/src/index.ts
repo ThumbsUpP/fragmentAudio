@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import llmRoutes from "./routes/index.js";
 import translationRoutes from "./routes/translationRoutes.js";
 import dotenv from "dotenv";
 
@@ -21,14 +22,14 @@ app.get("/health", (_req, res) => {
 });
 
 // API routes
-app.use("/api/translations", translationRoutes);
+app.use("/api/llm", llmRoutes);
 
 // Start the server
 const startServer = async () => {
   try {
     app.listen(PORT, () => {
-      console.log(`Translation service running on port ${PORT}`);
-      console.log(`Translation API available at http://localhost:${PORT}/api/translations`);
+      console.log(`LLM service running on port ${PORT}`);
+      console.log(`LLM API available at http://localhost:${PORT}/api/llm`);
     });
   } catch (error) {
     console.error("Failed to start server:", error);

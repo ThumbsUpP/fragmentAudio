@@ -1,7 +1,7 @@
 {
-  "name": "transcript-translator",
+  "name": "llm-service",
   "version": "1.0.0",
-  "description": "Service for translating transcripts using external LLM models",
+  "description": "Service for various language processing tasks using external LLM models",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
