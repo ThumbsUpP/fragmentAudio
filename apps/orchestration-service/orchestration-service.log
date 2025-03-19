@@ -59,3 +59,6 @@
 [2025-03-17T07:48:55.480Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
 [2025-03-17T07:48:55.480Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
 [2025-03-17T07:49:05.411Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-19T13:20:37.531Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-19T13:20:37.533Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-19T13:20:37.533Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health

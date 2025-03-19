@@ -7,7 +7,7 @@ const llmService = new LlmService();
 // Explain grammar in text
 router.post("/", async (req: Request, res: Response) => {
   try {
-    const { videoId, segmentId, text } = req.body;
+    const { videoId, segmentId, text, targetLanguage } = req.body;
 
     if (!videoId || !segmentId || !text) {
       return res.status(400).json({ 
@@ -18,7 +18,8 @@ router.post("/", async (req: Request, res: Response) => {
     const result = await llmService.explainGrammar(
       segmentId,
       videoId,
-      text
+      text,
+      targetLanguage ||"english"
     );
 
     return res.status(200).json({

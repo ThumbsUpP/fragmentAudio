@@ -57,12 +57,12 @@ export class LlmService {
    * @param text The text to explain
    * @returns The grammar explanation result
    */
-  async explainGrammar(segmentID: string, videoId: string, text: string): Promise<GrammarResult> {
+  async explainGrammar(segmentID: string, videoId: string, text: string, targetLanguage: string): Promise<GrammarResult> {
     try {
       console.log("Explaining grammar...");
 
       // Call the LLM service to explain grammar
-      const result = await this.llmClient.explainGrammar(text);
+      const result = await this.llmClient.explainGrammar(text, targetLanguage);
 
       if (!result.answer) {
         throw new Error("Failed to get grammar explanation from LLM service");
