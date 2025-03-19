@@ -2,11 +2,15 @@
  * Represents the result of the alignment process from stable-ts
  */
 
+type Language = 'zh' | 'en' | 'fr';
+export type Translation = Partial<Record<Language, string>>;
+
 export interface Word {
   word: string;
   start: number;
   end: number;
   pinyin?: string;
+  translation?: Translation;
 }
 export interface Segment {
   text: string;
