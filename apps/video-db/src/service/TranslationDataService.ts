@@ -73,7 +73,7 @@ export class TranslationDataService {
   async deleteTranslation(videoId: string, language: string): Promise<boolean> {
     try {
       const result = await this.translationRepository.delete({ videoId, language });
-      return result.affected !== undefined && result.affected > 0;
+      return result.affected !== undefined && result.affected !== null && result.affected > 0;
     } catch (error) {
       console.error(`Error deleting translation for video ${videoId}:`, error);
       return false;
