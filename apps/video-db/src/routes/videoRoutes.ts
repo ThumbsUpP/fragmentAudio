@@ -1,7 +1,7 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, IRouter } from "express";
 import { VideoDataService } from "../service/VideoDataService.js";
 
-const router = Router();
+const router: IRouter = Router();
 const videoDataService = new VideoDataService();
 
 // Get all video data

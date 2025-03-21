@@ -1,8 +1,8 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, IRouter } from "express";
 import { TranslationDataService } from "../service/TranslationDataService.js";
 import { VideoDataService } from "../service/VideoDataService.js";
 
-const router = Router();
+const router: IRouter = Router();
 const translationDataService = new TranslationDataService();
 const videoDataService = new VideoDataService();
 
