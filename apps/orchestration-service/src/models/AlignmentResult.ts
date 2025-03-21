@@ -3,7 +3,8 @@
  */
 
 type Language = 'zh' | 'en' | 'fr';
-export type Translation = Partial<Record<Language, string>>;
+// export type Translation = Partial<Record<Language, string>>;
+export type Translation = string;
 
 export interface Word {
   word: string;
@@ -18,15 +19,14 @@ export interface Segment {
   end: number;
   id: number;
   words: Word[];
+  translatedText?: Translation;
 }
 
 export interface AlignmentResult {
   /**
    * The alignment data returned from stable-ts
    */
-  alignment?: {
-    segments: Segment[];
-  };
+  segments: Segment[];
 
   /**
    * The ID of the video

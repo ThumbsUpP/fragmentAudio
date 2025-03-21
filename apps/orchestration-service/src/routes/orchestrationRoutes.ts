@@ -85,46 +85,46 @@ router.post(
   }
 );
 
-// Retry processing route
-router.post("/retry/:videoId", async (req: Request, res: Response) => {
-  try {
-    const { videoId } = req.params;
-    const { videoUrl, audioFilePath, srtFilePath, targetLanguage, maxRetries } = req.body;
+// // Retry processing route
+// router.post("/retry/:videoId", async (req: Request, res: Response) => {
+//   try {
+//     const { videoId } = req.params;
+//     const { videoUrl, audioFilePath, srtFilePath, targetLanguage, maxRetries } = req.body;
     
-    if (!videoUrl || !audioFilePath || !srtFilePath) {
-      return res.status(400).json({ 
-        error: "videoUrl, audioFilePath, and srtFilePath are required" 
-      });
-    }
+//     if (!videoUrl || !audioFilePath || !srtFilePath) {
+//       return res.status(400).json({ 
+//         error: "videoUrl, audioFilePath, and srtFilePath are required" 
+//       });
+//     }
     
-    // Check if files exist
-    if (!fs.existsSync(audioFilePath) || !fs.existsSync(srtFilePath)) {
-      return res.status(400).json({ error: "Audio file or SRT file not found" });
-    }
+//     // Check if files exist
+//     if (!fs.existsSync(audioFilePath) || !fs.existsSync(srtFilePath)) {
+//       return res.status(400).json({ error: "Audio file or SRT file not found" });
+//     }
     
-    // Create processing request
-    const request: AudioProcessingRequest = {
-      videoId,
-      videoUrl,
-      audioFilePath,
-      srtFilePath,
-      targetLanguage
-    };
+//     // Create processing request
+//     const request: AudioProcessingRequest = {
+//       videoId,
+//       videoUrl,
+//       audioFilePath,
+//       srtFilePath,
+//       targetLanguage
+//     };
     
-    // Retry processing
-    const result = await orchestrationService.retryProcessing(
-      request,
-      maxRetries || 3
-    );
+//     // Retry processing
+//     const result = await orchestrationService.retryProcessing(
+//       request,
+//       maxRetries || 3
+//     );
     
-    return res.status(200).json(result);
-  } catch (error) {
-    logger.error(`Error retrying processing: ${(error as Error).message}`);
-    return res.status(500).json({ 
-      error: `Failed to retry processing: ${(error as Error).message}` 
-    });
-  }
-});
+//     return res.status(200).json(result);
+//   } catch (error) {
+//     logger.error(`Error retrying processing: ${(error as Error).message}`);
+//     return res.status(500).json({ 
+//       error: `Failed to retry processing: ${(error as Error).message}` 
+//     });
+//   }
+// });
 
 // Health check route
 router.get("/health", (_req: Request, res: Response) => {

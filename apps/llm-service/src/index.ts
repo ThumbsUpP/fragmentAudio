@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import llmRoutes from "./routes/index.js";
-import translationRoutes from "./routes/translationRoutes.js";
 import dotenv from "dotenv";
 
 // Load environment variables
