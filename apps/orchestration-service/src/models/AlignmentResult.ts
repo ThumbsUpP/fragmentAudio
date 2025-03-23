@@ -3,8 +3,8 @@
  */
 
 type Language = 'zh' | 'en' | 'fr';
-// export type Translation = Partial<Record<Language, string>>;
-export type Translation = string;
+export type Translation = Partial<Record<Language, string>>;
+// export type Translation = string;
 
 export interface Word {
   word: string;
@@ -13,6 +13,7 @@ export interface Word {
   pinyin?: string;
   translation?: Translation;
 }
+
 export interface Segment {
   text: string;
   start: number;

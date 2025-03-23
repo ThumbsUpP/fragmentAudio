@@ -1,15 +1,20 @@
-import express from "express";
-import cors from "cors";
-import { initializeDatabase } from "./data-source.js";
-import videoRoutes from "./routes/videoRoutes.js";
-import translationRoutes from "./routes/translationRoutes.js";
-import * as fs from "fs";
+import dotenv from "dotenv";
 import * as path from "path";
 import { fileURLToPath } from "url";
 
 // ES Module equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Load environment variables at the very beginning
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+
+import express from "express";
+import cors from "cors";
+import { initializeDatabase } from "./data-source.js";
+import videoRoutes from "./routes/videoRoutes.js";
+import translationRoutes from "./routes/translationRoutes.js";
+import * as fs from "fs";
 
 // Ensure data directory exists for SQLite
 const dataDir = path.join(__dirname, "..", "data");

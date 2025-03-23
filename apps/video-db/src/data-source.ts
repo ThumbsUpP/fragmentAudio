@@ -1,13 +1,22 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import { VideoData } from "./entity/VideoData.js";
 import { TranslationData } from "./entity/TranslationData.js";
-import * as dotenv from "dotenv";
+import { AlignmentResult, Segment, Word } from "./entity/AlignmentResult.js";
+import dotenv from "dotenv";
+import * as path from "path";
+import { fileURLToPath } from "url";
 
-// Load environment variables
-dotenv.config();
+// ES Module equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load environment variables with explicit path
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 // Default to SQLite for development if DATABASE_URL is not provided
-const dbUrl = process.env.DATABASE_URL || "sqlite";
+const dbUrl = process.env.DATABASE_URL
+
+console.log({ dbUrl });
 
 // Create separate configurations for PostgreSQL and SQLite
 const postgresConfig: DataSourceOptions = {
@@ -15,24 +24,15 @@ const postgresConfig: DataSourceOptions = {
   url: dbUrl,
   synchronize: true,
   logging: false,
-  entities: [VideoData, TranslationData],
+  entities: [VideoData, TranslationData, AlignmentResult, Segment, Word],
   migrations: [],
   subscribers: [],
 };
 
-const sqliteConfig: DataSourceOptions = {
-  type: "sqlite",
-  database: "./data/database.sqlite",
-  synchronize: true,
-  logging: false,
-  entities: [VideoData, TranslationData],
-  migrations: [],
-  subscribers: [],
-};
 
 // Choose the appropriate configuration based on the database URL
 export const AppDataSource = new DataSource(
-  dbUrl.startsWith("postgres") ? postgresConfig : sqliteConfig
+  postgresConfig
 );
 
 // Initialize connection
