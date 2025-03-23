@@ -55,7 +55,7 @@ export class OrchestrationService {
         this.logger.info(`Step 2: Translating to ${request.targetLanguage}`);
 
         for (const segment of alignmentResult.segments || []) {
-          segment.translatedText = await this.translationClient.translateTranscript(request.videoId, segment.text, 'en');
+          segment.translatedText = { en: await this.translationClient.translateTranscript(request.videoId, segment.text, request.targetLanguage || 'en') };
         }
 
       } catch (error) {
@@ -64,6 +64,28 @@ export class OrchestrationService {
         processingResult.error = `Alignment succeeded but translation failed: ${(error as Error).message}`;
       }
 
+      // Step 3: Save the alignment result to the video-db service
+      try {
+        this.logger.info(`Step 3: Saving alignment result to video-db service for video ID: ${request.videoId}`);
+
+        // Save the alignment result to the video-db service using the dedicated endpoint
+        const savedData = await this.videoDbClient.saveAlignmentResult(
+          request.videoId,
+          request.videoUrl,
+          alignmentResult
+        );
+
+        this.logger.info(`Successfully saved alignment result to video-db service for video ID: ${request.videoId}`);
+        alignmentResult.savedToDb = true;
+        alignmentResult.dbRecord = savedData;
+      } catch (error) {
+        this.logger.error(`Failed to save alignment result to video-db service: ${(error as Error).message}`);
+        processingResult.status = processingResult.status === "success" ? "partial_success" : processingResult.status;
+        processingResult.error = processingResult.error
+          ? `${processingResult.error}. Failed to save to video-db: ${(error as Error).message}`
+          : `Failed to save to video-db: ${(error as Error).message}`;
+        alignmentResult.savedToDb = false;
+      }
 
       this.logger.info(`Processing completed for video ID: ${request.videoId}`);
       return processingResult;

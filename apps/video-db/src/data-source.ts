@@ -1,7 +1,7 @@
 import { DataSource, DataSourceOptions } from "typeorm";
-import { VideoData } from "./entity/VideoData.js";
-import { TranslationData } from "./entity/TranslationData.js";
-import { AlignmentResult, Segment, Word } from "./entity/AlignmentResult.js";
+import { AlignmentResult } from "./entity/AlignmentResult.js";
+import { Segment } from "./entity/Segment.js";
+import { Word } from "./entity/Word.js";
 import dotenv from "dotenv";
 import * as path from "path";
 import { fileURLToPath } from "url";
@@ -16,15 +16,13 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 // Default to SQLite for development if DATABASE_URL is not provided
 const dbUrl = process.env.DATABASE_URL
 
-console.log({ dbUrl });
-
 // Create separate configurations for PostgreSQL and SQLite
 const postgresConfig: DataSourceOptions = {
   type: "postgres",
   url: dbUrl,
   synchronize: true,
   logging: false,
-  entities: [VideoData, TranslationData, AlignmentResult, Segment, Word],
+  entities: [AlignmentResult, Segment, Word],
   migrations: [],
   subscribers: [],
 };

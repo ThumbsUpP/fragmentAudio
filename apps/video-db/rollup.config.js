@@ -21,14 +21,20 @@ export default {
     // Node.js built-ins
     'fs', 'path', 'url', 'util', 'crypto', 'stream', 'events', 'os', 'http', 'https',
     // External dependencies
-    'express', 'cors', 'dotenv', 'pg', 'sqlite3', 'typeorm'
+    'express', 'cors', 'dotenv', 'pg', 'sqlite3', 'typeorm', 'class-transformer'
   ],
   plugins: [
     resolve({
       preferBuiltins: true,
       extensions: ['.js', '.ts']
     }),
-    commonjs(),
+    commonjs({
+      transformMixedEsModules: true,
+      // Fix for class-transformer 'this is undefined' error
+      exclude: [
+        'node_modules/class-transformer/**'
+      ]
+    }),
     json(),
     typescript({
       tsconfig: './tsconfig.json',

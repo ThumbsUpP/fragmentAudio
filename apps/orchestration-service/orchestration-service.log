@@ -92,3 +92,42 @@
 [2025-03-23T15:41:49.540Z] [OrchestrationService] [INFO]: Server running on port 4001
 [2025-03-23T15:41:49.544Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
 [2025-03-23T15:41:49.545Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-23T16:11:25.693Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-23T16:11:25.694Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-23T16:11:25.695Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-23T16:11:37.639Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-23T16:11:37.639Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-23T16:11:37.640Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-23T16:11:55.545Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-03-23T16:11:58.871Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-1
+[2025-03-23T16:11:58.897Z] [OrchestrationService] [ERROR]: Failed to save alignment result to video-db service: Failed to save alignment result: Request failed with status code 500
+[2025-03-23T16:11:58.897Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-23T16:14:53.880Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-23T16:14:53.882Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-23T16:14:53.882Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-23T16:34:03.218Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-23T16:34:03.220Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-23T16:34:03.220Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-23T16:35:23.433Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-23T16:35:23.435Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-23T16:35:23.435Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-23T16:35:31.014Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-23T16:35:31.014Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-23T16:35:31.014Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-23T16:35:49.649Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-03-23T16:35:53.137Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-1
+[2025-03-23T16:35:53.749Z] [OrchestrationService] [ERROR]: Failed to save alignment result to video-db service: Failed to save alignment result: Request failed with status code 500
+[2025-03-23T16:35:53.749Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-24T06:35:46.250Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T06:35:46.252Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T06:35:46.252Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T06:35:59.077Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-24T06:35:59.078Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-24T06:35:59.078Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-24T06:36:16.649Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-03-24T06:36:20.469Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-1
+[2025-03-24T06:36:21.228Z] [OrchestrationService] [ERROR]: Failed to save alignment result to video-db service: Failed to save alignment result: Request failed with status code 500
+[2025-03-24T06:36:21.228Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-24T06:39:34.760Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T06:39:34.761Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T06:39:34.761Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health

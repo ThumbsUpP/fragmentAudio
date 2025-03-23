@@ -5,68 +5,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
-  JoinColumn,
 } from "typeorm";
-
-type Language = 'zh' | 'en' | 'fr';
-export type Translation = Partial<Record<Language, string>>;
-
-/**
- * Entity representing the Word structure from alignment
- */
-@Entity()
-export class Word {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
-  word!: string;
-
-  @Column("float")
-  start!: number;
-
-  @Column("float")
-  end!: number;
-
-  @Column({ nullable: true })
-  pinyin?: string;
-
-  @Column({ type: "jsonb", nullable: true })
-  translation?: Translation;
-
-  @Column()
-  segmentId!: number;
-}
-
-/**
- * Entity representing the Segment structure from alignment
- */
-@Entity()
-export class Segment {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column("text")
-  text!: string;
-
-  @Column("float")
-  start!: number;
-
-  @Column("float")
-  end!: number;
-
-  @Column()
-  alignmentResultId!: number;
-
-  @Column({ type: "jsonb", nullable: true })
-  translatedText?: Translation;
-
-  @OneToMany(() => Word, word => word.segmentId, {
-    cascade: true,
-    eager: true,
-  })
-  words!: Word[];
-}
+import { Exclude, Type } from "class-transformer";
+import { Segment } from "./Segment.js";
 
 /**
  * Entity representing the AlignmentResult from stable-ts
@@ -88,10 +29,11 @@ export class AlignmentResult {
   @Column({ type: "jsonb", nullable: true })
   dbRecord?: any;
 
-  @OneToMany(() => Segment, segment => segment.alignmentResultId, {
+  @OneToMany("Segment", "alignmentResult", {
     cascade: true,
     eager: true,
   })
+  @Type(() => Segment)
   segments!: Segment[];
 
   @CreateDateColumn()
