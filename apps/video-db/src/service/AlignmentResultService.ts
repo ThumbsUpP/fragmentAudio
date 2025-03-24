@@ -50,14 +50,14 @@ export class AlignmentResultService {
       alignmentResult.videoId = videoId;
       alignmentResult.videoUrl = videoUrl;
       alignmentResult.savedToDb = true;
-      
+
       // Save to get an ID
       alignmentResult = await this.repository.save(alignmentResult);
     }
 
     // Create segments and words
     const segments: Segment[] = [];
-    
+
     if (Array.isArray(alignmentData.segments)) {
       for (const segmentData of alignmentData.segments) {
         const segment = new Segment();
@@ -66,10 +66,11 @@ export class AlignmentResultService {
         segment.end = segmentData.end;
         segment.alignmentResult = alignmentResult;
         segment.translatedText = segmentData.translatedText || null;
-        
+        segment.segmentId = segmentData.id;
+
         // Save segment to get ID
         const savedSegment = await this.segmentRepository.save(segment);
-        
+
         // Create words
         if (Array.isArray(segmentData.words)) {
           const words: Word[] = [];
@@ -81,23 +82,23 @@ export class AlignmentResultService {
             word.pinyin = wordData.pinyin || null;
             word.translation = wordData.translation || null;
             word.segment = savedSegment;
-            
+
             words.push(word);
           }
-          
+
           // Save all words for this segment
           if (words.length > 0) {
             await this.wordRepository.save(words);
           }
         }
-        
+
         segments.push(savedSegment);
       }
     }
-    
+
     // Update the alignment result with segments
     alignmentResult.segments = segments;
-    
+
     // Save and return the final result
     return this.repository.save(alignmentResult);
   }
@@ -144,7 +145,7 @@ export class AlignmentResultService {
       await this.wordRepository.delete({ segment: { id: segment.id } });
     }
     await this.segmentRepository.delete({ alignmentResult: { id: alignmentResult.id } });
-    
+
     // Delete the alignment result
     const result = await this.repository.delete({ videoId });
     return result.affected !== 0;

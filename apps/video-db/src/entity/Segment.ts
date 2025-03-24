@@ -24,6 +24,9 @@ export class Segment {
   @Column("text")
   text!: string;
 
+  @Column("text")
+  segmentId!: string;
+
   @Column("float")
   start!: number;
 

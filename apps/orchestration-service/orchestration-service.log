@@ -131,3 +131,39 @@
 [2025-03-24T06:39:34.760Z] [OrchestrationService] [INFO]: Server running on port 4001
 [2025-03-24T06:39:34.761Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
 [2025-03-24T06:39:34.761Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T07:31:57.769Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T07:31:57.773Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T07:31:57.773Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T07:32:10.234Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-24T07:32:10.234Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-6
+[2025-03-24T07:32:10.235Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-24T07:32:18.848Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-03-24T07:32:22.011Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-6
+[2025-03-24T07:32:22.637Z] [OrchestrationService] [INFO]: Successfully saved alignment result to video-db service for video ID: test-6
+[2025-03-24T07:32:22.637Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-6
+[2025-03-24T07:35:23.168Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T07:35:23.169Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T07:35:23.169Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:01:12.529Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:01:12.534Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:01:12.534Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:03:00.720Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:03:00.722Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:03:00.722Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:24:06.155Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:24:06.157Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:24:06.157Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:24:10.759Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-24T08:24:10.759Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-8
+[2025-03-24T08:24:10.759Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-24T08:24:10.790Z] [OrchestrationService] [ERROR]: Processing failed: Failed to align audio with SRT: 
+[2025-03-24T08:24:53.480Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:24:53.482Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:24:53.482Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:24:59.345Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-24T08:24:59.346Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-8
+[2025-03-24T08:24:59.346Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-24T08:25:17.918Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-03-24T08:25:21.638Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-8
+[2025-03-24T08:25:22.285Z] [OrchestrationService] [INFO]: Successfully saved alignment result to video-db service for video ID: test-8
+[2025-03-24T08:25:22.285Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-8
