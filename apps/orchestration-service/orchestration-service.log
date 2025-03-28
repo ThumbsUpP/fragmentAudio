@@ -167,3 +167,106 @@
 [2025-03-24T08:25:21.638Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-8
 [2025-03-24T08:25:22.285Z] [OrchestrationService] [INFO]: Successfully saved alignment result to video-db service for video ID: test-8
 [2025-03-24T08:25:22.285Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-8
+[2025-03-24T08:50:06.359Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:50:06.363Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:50:06.363Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-24T08:50:06.363Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:50:36.152Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:50:36.181Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:50:41.526Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-24T08:51:42.462Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:51:42.464Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:51:47.466Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-24T08:52:48.418Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:52:48.420Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:52:48.420Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-24T08:52:48.420Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:52:55.829Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:52:55.853Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:53:01.513Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-24T08:54:46.933Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:54:46.934Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:54:46.934Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-24T08:54:46.937Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:55:01.193Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:55:01.225Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:55:07.619Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-24T08:55:42.418Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-9, segmentId: new-segment-id
+[2025-03-24T08:55:42.422Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-9, segmentId: new-segment-id
+[2025-03-24T08:55:46.867Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-24T08:57:28.022Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-24T08:57:28.027Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-24T08:57:28.030Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-24T08:57:28.030Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-24T08:57:33.105Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:57:33.129Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-03-24T08:57:37.941Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-28T09:52:41.371Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T09:52:41.374Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T09:52:41.374Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T09:52:41.375Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T09:53:26.187Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T09:53:26.188Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T09:53:26.188Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T09:53:26.188Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T09:57:15.940Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T09:57:15.942Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T09:57:15.942Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T09:57:15.943Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T09:59:30.239Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-03-28T09:59:30.240Z] [OrchestrationService] [INFO]: Starting processing for video ID: test-1
+[2025-03-28T09:59:30.240Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-03-28T10:01:13.003Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-03-28T10:02:10.323Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: test-1
+[2025-03-28T10:02:10.346Z] [OrchestrationService] [ERROR]: Failed to save alignment result to video-db service: Failed to save alignment result: Request failed with status code 404
+[2025-03-28T10:02:10.346Z] [OrchestrationService] [INFO]: Processing completed for video ID: test-1
+[2025-03-28T14:56:04.467Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T14:56:04.469Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T14:56:04.469Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T14:56:04.469Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T14:56:45.717Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T14:56:45.745Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T14:56:52.897Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 404
+[2025-03-28T15:03:02.896Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T15:03:02.898Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T15:03:02.898Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T15:03:02.898Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T15:03:07.957Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:03:07.984Z] [GrammarRoutes] [WARN]: Error checking for existing grammar record: Request failed with status code 500
+[2025-03-28T15:03:07.985Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:03:18.022Z] [GrammarRoutes] [WARN]: Failed to save grammar explanation to video-db: Request failed with status code 500
+[2025-03-28T15:07:15.306Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T15:07:15.308Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T15:07:15.308Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T15:07:15.308Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T15:07:24.683Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:07:24.727Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:07:30.371Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:07:57.017Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:07:57.132Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-03-28T15:09:42.671Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T15:09:42.673Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T15:09:42.673Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T15:09:42.673Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T15:09:58.103Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff1
+[2025-03-28T15:09:58.235Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff1
+[2025-03-28T15:10:09.515Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff1
+[2025-03-28T15:12:59.306Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-03-28T15:12:59.308Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-03-28T15:12:59.308Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-03-28T15:12:59.308Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-03-28T15:13:05.564Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:13:05.609Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:13:10.353Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:20.152Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:20.295Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:26.955Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:26.977Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:28.383Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:28.403Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:29.535Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:29.552Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:30.809Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:30.827Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:32.135Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2
+[2025-03-28T15:16:32.152Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-1, segmentId: d26295d0-b07e-40db-8da2-f004dc3acff2

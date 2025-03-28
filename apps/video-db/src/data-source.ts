@@ -2,6 +2,7 @@ import { DataSource, DataSourceOptions } from "typeorm";
 import { AlignmentResult } from "./entity/AlignmentResult.js";
 import { Segment } from "./entity/Segment.js";
 import { Word } from "./entity/Word.js";
+import { GrammarExplanation } from "./entity/GrammarExplanation.js";
 import dotenv from "dotenv";
 import * as path from "path";
 import { fileURLToPath } from "url";
@@ -22,7 +23,7 @@ const postgresConfig: DataSourceOptions = {
   url: dbUrl,
   synchronize: true,
   logging: false,
-  entities: [AlignmentResult, Segment, Word],
+  entities: [AlignmentResult, Segment, Word, GrammarExplanation],
   migrations: [],
   subscribers: [],
 };

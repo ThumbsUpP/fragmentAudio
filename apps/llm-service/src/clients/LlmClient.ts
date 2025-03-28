@@ -90,7 +90,11 @@ export class LlmClient {
    */
   async explainGrammar(text: string, targetLanguage: string): Promise<{ answer: string }> {
     const systemPrompt = "You are an expert in grammar and of the chinese language.";
-    const userPrompt = `Explain the grammar and syntax in the following text in ${targetLanguage} :\n\n${text}\n\n`;
+    const userPrompt = 
+    `Explain the grammar and syntax in the following text in ${targetLanguage}, 
+    do not include any additional text other than the explanation,
+    
+    use markdown to format the response so it can be displayed nicely on a front end :\n\n${text}\n\n`;
 
     const response = await this.makeLlmRequest(systemPrompt, userPrompt);
 

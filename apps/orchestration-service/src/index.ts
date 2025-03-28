@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import orchestrationRoutes from "./routes/orchestrationRoutes.js";
+import grammarRoutes from "./routes/grammarRoutes.js";
 import { Logger } from "./utils/Logger.js";
 import path from "path";
 import fs from "fs";
@@ -36,6 +37,7 @@ app.get("/health", (_req, res) => {
 
 // API routes
 app.use("/api/orchestration", orchestrationRoutes);
+app.use("/api/grammar", grammarRoutes);
 
 // Start the server
 const startServer = async () => {
@@ -43,6 +45,7 @@ const startServer = async () => {
     app.listen(PORT, () => {
       logger.info(`Server running on port ${PORT}`);
       logger.info(`Orchestration API available at http://localhost:${PORT}/api/orchestration`);
+      logger.info(`Grammar API available at http://localhost:${PORT}/api/grammar`);
       logger.info(`Health check available at http://localhost:${PORT}/health`);
     });
   } catch (error) {

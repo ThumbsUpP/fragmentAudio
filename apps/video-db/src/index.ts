@@ -13,6 +13,7 @@ import express from "express";
 import cors from "cors";
 import { initializeDatabase } from "./data-source.js";
 import alignmentRoutes from "./routes/alignmentRoutes.js";
+import grammarRoutes from "./routes/grammarRoutes.js";
 import * as fs from "fs";
 
 // Ensure data directory exists for SQLite
@@ -37,6 +38,7 @@ app.get("/health", (_req, res) => {
 
 // API routes
 app.use("/api/alignments", alignmentRoutes);
+app.use("/api/grammar", grammarRoutes);
 
 // Start the server
 const startServer = async () => {
@@ -48,6 +50,7 @@ const startServer = async () => {
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
       console.log(`Alignment API available at http://localhost:${PORT}/api/alignments`);
+      console.log(`Grammar API available at http://localhost:${PORT}/api/grammar`);
     });
   } catch (error) {
     console.error("Failed to start server:", error);

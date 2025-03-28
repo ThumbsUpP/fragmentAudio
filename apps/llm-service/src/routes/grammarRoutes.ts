@@ -14,7 +14,7 @@ router.post("/", async (req: Request, res: Response) => {
         error: "videoId, segmentId, and text are required" 
       });
     }
-
+    
     const result = await llmService.explainGrammar(
       segmentId,
       videoId,
