@@ -1,4 +1,4 @@
-import axios from "axios";
+import { OpenAI } from "openai";
 import dotenv from "dotenv";
 
 // Ensure environment variables are loaded
@@ -10,17 +10,28 @@ export class LlmClient {
   private model: string;
   private temperature: number;
   private maxTokens: number;
+  private openai: OpenAI;
 
   constructor() {
     this.apiKey = process.env.LLM_API_KEY || "";
-    this.apiUrl = process.env.LLM_API_URL || "https://api.openai.com/v1/chat/completions";
-    this.model = process.env.LLM_MODEL || "gpt-3.5-turbo";
+    this.apiUrl = process.env.LLM_API_URL || "https://openrouter.ai/api/v1/chat/completions";
+    this.model = process.env.LLM_MODEL || "google/gemini-2.0-flash-001";
     this.temperature = parseFloat(process.env.LLM_TEMPERATURE || "0.3");
     this.maxTokens = parseInt(process.env.LLM_MAX_TOKENS || "4000", 10);
 
     if (!this.apiKey) {
       console.warn("Warning: LLM_API_KEY is not set. LLM functionality will not work properly.");
     }
+
+    // Initialize OpenAI SDK for OpenRouter
+    this.openai = new OpenAI({
+      apiKey: this.apiKey,
+      baseURL: this.apiUrl,
+      defaultHeaders: {
+        ...(process.env.LLM_HTTP_REFERER ? { "HTTP-Referer": process.env.LLM_HTTP_REFERER } : {}),
+        ...(process.env.LLM_X_TITLE ? { "X-Title": process.env.LLM_X_TITLE } : {})
+      }
+    });
   }
 
   /**
@@ -35,34 +46,18 @@ export class LlmClient {
         throw new Error("LLM_API_KEY is not set");
       }
 
-      // Make a request to the LLM API
-      const response = await axios.post(
-        this.apiUrl,
-        {
-          model: this.model,
-          messages: [
-            {
-              role: "system",
-              content: systemPrompt
-            },
-            {
-              role: "user",
-              content: userPrompt
-            }
-          ],
-          temperature: this.temperature,
-          max_tokens: this.maxTokens
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${this.apiKey}`
-          }
-        }
-      );
+      // Use OpenAI SDK to call OpenRouter endpoint
+      const response = await this.openai.chat.completions.create({
+        model: this.model,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ],
+        temperature: this.temperature,
+        max_tokens: this.maxTokens
+      });
 
-      // Extract the response text from the LLM
-      const responseText = response.data.choices[0].message.content.trim();
+      const responseText = response.choices[0].message.content?.trim() || "";
       return responseText;
     } catch (error) {
       console.error("Error calling LLM API:", error);

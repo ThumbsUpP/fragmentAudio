@@ -58,3 +58,325 @@
 [2025-03-28T16:06:58.269Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
 [2025-03-28T16:06:58.269Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
 [2025-03-28T16:06:58.269Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
+[2025-04-07T15:51:34.357Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:35.131Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:40.181Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:52.264Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:52.379Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:53.867Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:53.886Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:54.834Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:54.852Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:55.841Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-07T15:51:55.857Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: test-8, segmentId: ccd0a752-f49b-4979-97b6-11c89b494812
+[2025-04-08T06:52:25.695Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:52:25.797Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:52:30.069Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:54:19.816Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:54:19.838Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:55:51.280Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:55:51.321Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:57:02.545Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 1a6c21c4-73ce-4ba6-b0e8-e2c57f19b155
+[2025-04-08T06:57:02.657Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 1a6c21c4-73ce-4ba6-b0e8-e2c57f19b155
+[2025-04-08T06:57:05.731Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 1a6c21c4-73ce-4ba6-b0e8-e2c57f19b155
+[2025-04-08T06:58:23.722Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T06:58:23.740Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:00:54.776Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:00:54.797Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:01:16.268Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:01:16.285Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:01:37.690Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:01:37.789Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:01:39.559Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:01:39.578Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:05:55.366Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:05:55.381Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:08:21.559Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:08:21.579Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:08:28.117Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:08:28.134Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:10:08.213Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:10:08.229Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:10:22.732Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:10:22.751Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:10:56.893Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:10:56.912Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:14:02.430Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:14:02.453Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:14:10.932Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:14:10.949Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:16:47.343Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:16:47.362Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:17:04.444Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:17:04.542Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:17:17.429Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:17:17.524Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:18:29.975Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:18:29.993Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:18:41.481Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:18:41.578Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:18:42.212Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:18:42.230Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:19:08.804Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:19:08.927Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:19:10.042Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:19:10.057Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:19:43.738Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:19:43.758Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:20:04.079Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:20:04.215Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:20:10.301Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:40.191Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:40.289Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:43.029Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:43.046Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:44.072Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:44.088Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:48.473Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:48.490Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:49.449Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:49.464Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:53.035Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:53.053Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:53.666Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:21:53.681Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:22:16.386Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:22:16.487Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:22:22.668Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:22:22.685Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T07:32:50.373Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:32:50.440Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:32:56.735Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:32:56.789Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:33:04.385Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:33:04.406Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:33:05.024Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:33:05.042Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:33:17.132Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T07:33:17.273Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T07:33:21.900Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T07:35:16.069Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T07:35:16.190Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T07:35:40.184Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:35:40.291Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:35:43.263Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:36:04.241Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:36:04.261Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:36:18.552Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:36:18.659Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:36:31.780Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:36:31.881Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 530e9f9a-6f09-40c2-8a77-0538420684fb
+[2025-04-08T07:37:18.140Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 8e6fd455-c8ed-4563-b832-dbcfde7eefcc
+[2025-04-08T07:37:18.273Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 8e6fd455-c8ed-4563-b832-dbcfde7eefcc
+[2025-04-08T07:37:22.769Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 8e6fd455-c8ed-4563-b832-dbcfde7eefcc
+[2025-04-08T07:38:11.285Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: b8ee5f01-4fc6-4b50-b9d0-40e8eed11974
+[2025-04-08T07:38:11.383Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: b8ee5f01-4fc6-4b50-b9d0-40e8eed11974
+[2025-04-08T07:38:16.304Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: b8ee5f01-4fc6-4b50-b9d0-40e8eed11974
+[2025-04-08T07:50:57.319Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T07:50:57.412Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:20:44.066Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:20:44.167Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:20:52.057Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:20:52.079Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:26:35.170Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:26:35.274Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:29:51.630Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:29:51.654Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:29:58.824Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T08:29:58.844Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-08T08:30:07.164Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T08:30:07.192Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-08T08:39:01.270Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cef782e3-dcec-47e6-b5f5-b2a211072666
+[2025-04-08T08:39:01.572Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: cef782e3-dcec-47e6-b5f5-b2a211072666
+[2025-04-08T08:39:07.305Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: cef782e3-dcec-47e6-b5f5-b2a211072666
+[2025-04-08T08:40:47.269Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:40:47.292Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:41:09.431Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: f2216d4c-d6fc-4e8c-a227-95dd5b1a253c
+[2025-04-08T08:41:09.537Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: f2216d4c-d6fc-4e8c-a227-95dd5b1a253c
+[2025-04-08T08:41:11.437Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: f2216d4c-d6fc-4e8c-a227-95dd5b1a253c
+[2025-04-08T08:45:27.879Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:45:27.991Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:45:33.080Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T08:45:33.104Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T12:02:25.729Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-08T12:02:25.848Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T08:12:10.767Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T08:12:10.881Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T08:13:11.491Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 75bc0367-fb16-48d8-9222-7595b358f87a
+[2025-04-10T08:13:11.606Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 75bc0367-fb16-48d8-9222-7595b358f87a
+[2025-04-10T08:13:17.477Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 75bc0367-fb16-48d8-9222-7595b358f87a
+[2025-04-10T08:13:19.871Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 75bc0367-fb16-48d8-9222-7595b358f87a
+[2025-04-10T08:13:19.888Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 75bc0367-fb16-48d8-9222-7595b358f87a
+[2025-04-10T08:16:23.451Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-10T08:16:23.470Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-10T09:20:44.619Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:20:44.703Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:20:48.637Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:20:48.660Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:34:27.548Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 5787dc08-26fb-47c8-b6bd-f5545f1f597e
+[2025-04-10T09:34:28.407Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 5787dc08-26fb-47c8-b6bd-f5545f1f597e
+[2025-04-10T09:34:37.591Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 5787dc08-26fb-47c8-b6bd-f5545f1f597e
+[2025-04-10T09:36:48.260Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 1a6c21c4-73ce-4ba6-b0e8-e2c57f19b155
+[2025-04-10T09:36:48.361Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 1a6c21c4-73ce-4ba6-b0e8-e2c57f19b155
+[2025-04-10T09:37:07.310Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:37:07.418Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:39:30.485Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:39:30.604Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:39:32.791Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:39:32.809Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:39:33.319Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:39:33.336Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:40:12.940Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:40:13.042Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-10T09:46:04.789Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-10T09:46:04.806Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-10T09:46:56.910Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 3a6ec0a2-f49d-4da2-a2e5-2c9d0ee9b588
+[2025-04-10T09:46:57.012Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 3a6ec0a2-f49d-4da2-a2e5-2c9d0ee9b588
+[2025-04-10T09:47:01.059Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 3a6ec0a2-f49d-4da2-a2e5-2c9d0ee9b588
+[2025-04-10T09:53:57.536Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:53:57.555Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:54:11.206Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T09:54:11.317Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:14:35.805Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:14:35.906Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:14:36.910Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:14:36.947Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:14:37.561Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:14:37.579Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T12:21:14.110Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 1f32c6ca-e57f-471a-881c-9833701f98f6
+[2025-04-10T12:21:14.813Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 1f32c6ca-e57f-471a-881c-9833701f98f6
+[2025-04-10T12:21:19.922Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 1f32c6ca-e57f-471a-881c-9833701f98f6
+[2025-04-10T12:22:17.347Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 1f32c6ca-e57f-471a-881c-9833701f98f6
+[2025-04-10T12:22:17.451Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 1f32c6ca-e57f-471a-881c-9833701f98f6
+[2025-04-10T13:03:56.969Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T13:03:57.134Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T13:03:59.515Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T13:03:59.534Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T13:04:33.884Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T13:04:33.987Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T13:04:48.323Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 5cf92aa0-bf32-42d9-a269-837db133c129
+[2025-04-10T13:04:48.446Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 5cf92aa0-bf32-42d9-a269-837db133c129
+[2025-04-10T13:04:52.475Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 5cf92aa0-bf32-42d9-a269-837db133c129
+[2025-04-10T15:02:24.444Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T15:02:24.644Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T15:02:31.590Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T15:02:31.616Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-10T15:03:31.714Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 65cdd841-5099-4537-b4c2-9636e757b39c
+[2025-04-10T15:03:31.836Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: 65cdd841-5099-4537-b4c2-9636e757b39c
+[2025-04-10T15:03:39.483Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: 65cdd841-5099-4537-b4c2-9636e757b39c
+[2025-04-10T15:04:58.928Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-04-10T15:04:59.051Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-04-10T15:05:07.494Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: d26295d0-b07e-40db-8da2-f004dc3acffc
+[2025-04-11T07:54:28.193Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:54:28.289Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:55:30.342Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:55:30.363Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:56:02.283Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:56:02.417Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:56:33.123Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T07:56:33.144Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:25:55.979Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:25:56.093Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:26:00.557Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:26:00.582Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:29:21.957Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:29:21.978Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:31:02.072Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:31:02.105Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:31:03.492Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:31:03.514Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:31:05.990Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T09:31:06.009Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: 42e5fafb-1ae9-40d9-8c6b-2903e9702b6e
+[2025-04-11T10:39:31.129Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: da98d910-c6e3-4b54-b04a-f7865eb6bf25
+[2025-04-11T10:39:32.370Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: da98d910-c6e3-4b54-b04a-f7865eb6bf25
+[2025-04-11T10:39:36.995Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: da98d910-c6e3-4b54-b04a-f7865eb6bf25
+[2025-04-11T10:41:31.678Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-11T10:41:31.697Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ace02255-2576-4a9d-aa45-9f05a881251a
+[2025-04-11T11:24:08.938Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-04-11T11:24:09.211Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-04-11T11:24:12.961Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-04-11T11:24:22.805Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-04-11T11:24:22.832Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-04-21T08:45:07.075Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-21T08:45:07.394Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-21T08:45:12.628Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-21T08:45:12.649Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: cb560fb1-db0b-4cc3-b249-4d0f01b71f50
+[2025-04-21T08:45:39.365Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-04-21T08:45:39.468Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: rkKVEvQq0oU, segmentId: ddb34105-ff13-4ccb-a607-98da359fd769
+[2025-05-04T04:36:23.030Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-05-04T04:37:13.838Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-05-04T04:37:13.838Z] [OrchestrationService] [INFO]: Starting processing for video ID: Av-dQEHuY-k
+[2025-05-04T04:37:13.838Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-05-04T04:43:27.313Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-05-04T04:47:08.187Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: Av-dQEHuY-k
+[2025-05-04T04:47:39.993Z] [OrchestrationService] [INFO]: Successfully saved alignment result to video-db service for video ID: Av-dQEHuY-k
+[2025-05-04T04:47:39.993Z] [OrchestrationService] [INFO]: Processing completed for video ID: Av-dQEHuY-k
+[2025-05-04T04:57:19.960Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: 36dc1830-a9cc-4e2b-965f-aca5a6c2d3be
+[2025-05-04T04:57:20.064Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: 36dc1830-a9cc-4e2b-965f-aca5a6c2d3be
+[2025-05-04T04:57:23.756Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: 36dc1830-a9cc-4e2b-965f-aca5a6c2d3be
+[2025-05-04T04:58:22.552Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: d89f2d82-a97a-40a3-814e-32a3d07a3456
+[2025-05-04T04:58:22.696Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: d89f2d82-a97a-40a3-814e-32a3d07a3456
+[2025-05-04T04:58:26.870Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: d89f2d82-a97a-40a3-814e-32a3d07a3456
+[2025-05-04T05:02:57.002Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: 8affe26b-5643-4c11-a226-3f5bbf915249
+[2025-05-04T05:02:57.109Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: 8affe26b-5643-4c11-a226-3f5bbf915249
+[2025-05-04T05:03:02.895Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: 8affe26b-5643-4c11-a226-3f5bbf915249
+[2025-05-04T05:05:16.215Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: 75963392-02ec-4fc0-bfb7-9ff6e98dcaf4
+[2025-05-04T05:05:16.339Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: 75963392-02ec-4fc0-bfb7-9ff6e98dcaf4
+[2025-05-04T05:05:20.996Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: 75963392-02ec-4fc0-bfb7-9ff6e98dcaf4
+[2025-05-04T05:07:48.582Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: d5f2c8db-f111-4604-87e7-80002042d1e2
+[2025-05-04T05:07:48.705Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: d5f2c8db-f111-4604-87e7-80002042d1e2
+[2025-05-04T05:07:53.979Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: d5f2c8db-f111-4604-87e7-80002042d1e2
+[2025-05-04T05:11:32.546Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: 56684ea5-c0ee-4640-8f3c-6741e99e9f73
+[2025-05-04T05:11:32.660Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: 56684ea5-c0ee-4640-8f3c-6741e99e9f73
+[2025-05-04T05:11:35.583Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: 56684ea5-c0ee-4640-8f3c-6741e99e9f73
+[2025-05-04T05:14:13.927Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: f4487cd5-bc27-4ca0-8f22-153568554669
+[2025-05-04T05:14:14.041Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: f4487cd5-bc27-4ca0-8f22-153568554669
+[2025-05-04T05:14:17.634Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: f4487cd5-bc27-4ca0-8f22-153568554669
+[2025-05-04T05:15:27.760Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: 93166fa5-393d-441a-ae24-3198a6d60faa
+[2025-05-04T05:15:27.864Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: 93166fa5-393d-441a-ae24-3198a6d60faa
+[2025-05-04T05:15:31.601Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: 93166fa5-393d-441a-ae24-3198a6d60faa
+[2025-05-04T05:17:06.768Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: ad5cc5f6-28fd-4296-91b3-2c84286e9a7d
+[2025-05-04T05:17:06.898Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: ad5cc5f6-28fd-4296-91b3-2c84286e9a7d
+[2025-05-04T05:17:13.418Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: ad5cc5f6-28fd-4296-91b3-2c84286e9a7d
+[2025-05-04T05:21:12.695Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: Av-dQEHuY-k, segmentId: 819446a8-d66b-4280-a497-6b32aaef72b6
+[2025-05-04T05:21:12.801Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: Av-dQEHuY-k, segmentId: 819446a8-d66b-4280-a497-6b32aaef72b6
+[2025-05-04T05:21:16.525Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: Av-dQEHuY-k, segmentId: 819446a8-d66b-4280-a497-6b32aaef72b6
+[2025-05-10T04:54:19.400Z] [OrchestrationRoutes] [INFO]: Received process request
+[2025-05-10T04:54:19.404Z] [OrchestrationService] [INFO]: Starting processing for video ID: EzsPRDDob5g
+[2025-05-10T04:54:19.404Z] [OrchestrationService] [INFO]: Step 1: Aligning audio with SRT
+[2025-05-10T04:56:35.484Z] [OrchestrationService] [INFO]: Step 2: Translating to undefined
+[2025-05-10T04:58:22.163Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: EzsPRDDob5g
+[2025-05-10T04:58:36.753Z] [OrchestrationService] [INFO]: Successfully saved alignment result to video-db service for video ID: EzsPRDDob5g
+[2025-05-10T04:58:36.753Z] [OrchestrationService] [INFO]: Processing completed for video ID: EzsPRDDob5g
+[2025-05-10T05:19:25.049Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: cc67b5e5-5320-4329-96c1-0a8a6d19c409
+[2025-05-10T05:19:25.172Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: cc67b5e5-5320-4329-96c1-0a8a6d19c409
+[2025-05-10T05:19:30.544Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: cc67b5e5-5320-4329-96c1-0a8a6d19c409
+[2025-05-10T05:20:50.870Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 215cf4db-18eb-4c53-92b2-cb09170e2383
+[2025-05-10T05:20:50.978Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 215cf4db-18eb-4c53-92b2-cb09170e2383
+[2025-05-10T05:20:56.496Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 215cf4db-18eb-4c53-92b2-cb09170e2383
+[2025-05-10T08:03:41.491Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 225da601-e8d6-4815-8776-a014ab8f9196
+[2025-05-10T08:03:42.643Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 225da601-e8d6-4815-8776-a014ab8f9196
+[2025-05-10T08:03:48.066Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 225da601-e8d6-4815-8776-a014ab8f9196
+[2025-05-10T08:04:56.779Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 64e0a7c6-2864-4525-a65a-29150916a0b1
+[2025-05-10T08:04:56.896Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 64e0a7c6-2864-4525-a65a-29150916a0b1
+[2025-05-10T08:05:00.324Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 64e0a7c6-2864-4525-a65a-29150916a0b1
+[2025-05-10T08:06:22.898Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 9978c9fb-aa8c-4673-b447-a55e32386ade
+[2025-05-10T08:06:23.029Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 9978c9fb-aa8c-4673-b447-a55e32386ade
+[2025-05-10T08:06:29.127Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 9978c9fb-aa8c-4673-b447-a55e32386ade
+[2025-05-10T08:07:23.826Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: b3feca91-8770-4841-8f87-5de85d62a37f
+[2025-05-10T08:07:23.960Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: b3feca91-8770-4841-8f87-5de85d62a37f
+[2025-05-10T08:07:27.897Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: b3feca91-8770-4841-8f87-5de85d62a37f
+[2025-05-10T08:09:32.846Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 4024009b-8c64-4a26-abfb-c0489d188777
+[2025-05-10T08:09:32.957Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 4024009b-8c64-4a26-abfb-c0489d188777
+[2025-05-10T08:09:37.136Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 4024009b-8c64-4a26-abfb-c0489d188777
+[2025-05-10T08:09:58.122Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 4024009b-8c64-4a26-abfb-c0489d188777
+[2025-05-10T08:09:58.230Z] [GrammarRoutes] [INFO]: Found existing grammar explanation for videoId: EzsPRDDob5g, segmentId: 4024009b-8c64-4a26-abfb-c0489d188777
+[2025-05-10T08:10:53.884Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 1131e12d-d1f4-43e5-b79e-da67f28f3058
+[2025-05-10T08:10:53.996Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 1131e12d-d1f4-43e5-b79e-da67f28f3058
+[2025-05-10T08:10:57.058Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 1131e12d-d1f4-43e5-b79e-da67f28f3058
+[2025-05-10T08:11:33.336Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: acbe705c-3a51-445d-b8f2-fc103620accc
+[2025-05-10T08:11:33.449Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: acbe705c-3a51-445d-b8f2-fc103620accc
+[2025-05-10T08:11:36.052Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: acbe705c-3a51-445d-b8f2-fc103620accc
+[2025-05-10T08:12:21.721Z] [GrammarRoutes] [INFO]: Processing grammar explanation request for videoId: EzsPRDDob5g, segmentId: 8bdcdbf6-41e5-4b30-99fb-16368a660e6e
+[2025-05-10T08:12:21.821Z] [GrammarRoutes] [INFO]: Generating new grammar explanation for videoId: EzsPRDDob5g, segmentId: 8bdcdbf6-41e5-4b30-99fb-16368a660e6e
+[2025-05-10T08:12:27.284Z] [GrammarRoutes] [INFO]: Saved grammar explanation to video-db for videoId: EzsPRDDob5g, segmentId: 8bdcdbf6-41e5-4b30-99fb-16368a660e6e
