@@ -1,0 +1,18 @@
+{
+  "rules": [
+    {
+      "description": "Only pnpm commands are allowed for package management and scripts.",
+      "enforcement": "error",
+      "match": {
+        "command": "*"
+      },
+      "allow": [
+        "pnpm *"
+      ],
+      "deny": [
+        "npm *",
+        "yarn *"
+      ]
+    }
+  ]
+}
