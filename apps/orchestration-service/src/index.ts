@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import orchestrationRoutes from "./routes/orchestrationRoutes.js";
 import grammarRoutes from "./routes/grammarRoutes.js";
+import vocabularyRoutes from "./routes/vocabularyRoutes.js";
+
 import { Logger } from "./utils/Logger.js";
 import path from "path";
 import fs from "fs";
@@ -28,16 +30,17 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Health check endpoint
 app.get("/health", (_req, res) => {
-  res.status(200).json({ 
-    status: "ok", 
+  res.status(200).json({
+    status: "ok",
     service: "orchestration-service",
-    timestamp: new Date().toISOString() 
+    timestamp: new Date().toISOString()
   });
 });
 
 // API routes
 app.use("/api/orchestration", orchestrationRoutes);
 app.use("/api/grammar", grammarRoutes);
+app.use("/api/vocabulary", vocabularyRoutes);
 
 // Start the server
 const startServer = async () => {

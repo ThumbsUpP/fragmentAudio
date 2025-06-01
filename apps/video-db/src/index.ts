@@ -14,6 +14,7 @@ import cors from "cors";
 import { initializeDatabase } from "./data-source.js";
 import alignmentRoutes from "./routes/alignmentRoutes.js";
 import grammarRoutes from "./routes/grammarRoutes.js";
+import vocabularyListRoutes from "./routes/vocabularyListRoutes.js";
 import * as fs from "fs";
 
 // Ensure data directory exists for SQLite
@@ -39,6 +40,7 @@ app.get("/health", (_req, res) => {
 // API routes
 app.use("/api/alignments", alignmentRoutes);
 app.use("/api/grammar", grammarRoutes);
+app.use("/api/vocabulary-list", vocabularyListRoutes);
 
 // Start the server
 const startServer = async () => {

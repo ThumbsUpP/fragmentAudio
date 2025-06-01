@@ -11,11 +11,13 @@ export class VideoDbClient {
   private alignmentApiUrl: string;
   private grammarApiUrl: string;
   private baseApiUrl: string;
+  private vocabularyApiUrl: string;
 
   constructor() {
     this.baseApiUrl = process.env.VIDEO_DB_URL || "http://localhost:3001/api";
     this.alignmentApiUrl = `${this.baseApiUrl}/alignments`;
     this.grammarApiUrl = `${this.baseApiUrl}/grammar`;
+    this.vocabularyApiUrl = `${this.baseApiUrl}/vocabulary-list`;
   }
 
 
@@ -127,4 +129,80 @@ export class VideoDbClient {
       throw error;
     }
   }
+
+  /**
+   * Gets the vocabulary list for a video from the video-db service
+   * @param videoId The ID of the video
+   * @returns The vocabulary list or null if not found
+   */
+  async getVocabulary(videoId: string): Promise<any> {
+    try {
+      const response = await axios.get(`${this.vocabularyApiUrl}/${videoId}`);
+      if (response.status !== 200) {
+        throw new Error(`Video-db vocabulary service returned status code ${response.status}`);
+      }
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response?.status === 404) {
+        return null;
+      }
+      console.error("Error in VideoDbClient.getVocabulary:", error);
+      throw error;
+    }
+  }
+
+  /**
+   * Creates a new vocabulary list for a video in the video-db service
+   * @param videoId The ID of the video
+   * @param items The vocabulary items array
+   * @returns The created vocabulary list
+   */
+  async createVocabulary(videoId: string, items: any[]): Promise<any> {
+    try {
+      const response = await axios.post(
+        this.vocabularyApiUrl,
+        { videoId, items },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.status !== 201) {
+        throw new Error(`Video-db vocabulary service returned status code ${response.status}`);
+      }
+      return response.data;
+    } catch (error) {
+      console.error("Error in VideoDbClient.createVocabulary:", error);
+      throw error;
+    }
+  }
+
+  /**
+   * Updates an existing vocabulary list for a video in the video-db service
+   * @param videoId The ID of the video
+   * @param items The vocabulary items array to replace
+   * @returns The updated vocabulary list
+   */
+  async updateVocabulary(videoId: string, items: any[]): Promise<any> {
+    try {
+      const response = await axios.patch(
+        `${this.vocabularyApiUrl}/${videoId}`,
+        { items },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.status !== 200) {
+        throw new Error(`Video-db vocabulary service returned status code ${response.status}`);
+      }
+      return response.data;
+    } catch (error) {
+      console.error("Error in VideoDbClient.updateVocabulary:", error);
+      throw error;
+    }
+  }
 }
+
