@@ -405,3 +405,7 @@
 [2025-05-12T04:16:36.200Z] [OrchestrationService] [INFO]: Step 3: Saving alignment result to video-db service for video ID: -CkPhuyRkaU
 [2025-05-12T04:16:44.408Z] [OrchestrationService] [INFO]: Successfully saved alignment result to video-db service for video ID: -CkPhuyRkaU
 [2025-05-12T04:16:44.409Z] [OrchestrationService] [INFO]: Processing completed for video ID: -CkPhuyRkaU
+[2025-06-07T09:29:14.863Z] [OrchestrationService] [INFO]: Server running on port 4001
+[2025-06-07T09:29:14.865Z] [OrchestrationService] [INFO]: Orchestration API available at http://localhost:4001/api/orchestration
+[2025-06-07T09:29:14.865Z] [OrchestrationService] [INFO]: Grammar API available at http://localhost:4001/api/grammar
+[2025-06-07T09:29:14.865Z] [OrchestrationService] [INFO]: Health check available at http://localhost:4001/health
