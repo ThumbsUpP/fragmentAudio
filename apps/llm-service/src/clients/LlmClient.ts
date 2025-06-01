@@ -72,7 +72,7 @@ export class LlmClient {
    * @returns The translated text
    */
   async translate(text: string, targetLanguage: string): Promise<string> {
-    const systemPrompt = "You are a professional translator. Translate the text accurately while preserving meaning and tone.";
+    const systemPrompt = "You are a professional translator. Translate the text accurately while preserving meaning and tone. IMPORTANT: Do not include any additional text other than the translation.  ";
     const userPrompt = `Translate the following text to ${targetLanguage}:\n\n${text}`;
 
     return this.makeLlmRequest(systemPrompt, userPrompt);
@@ -84,7 +84,7 @@ export class LlmClient {
    * @returns Object containing corrected text and optional explanations
    */
   async explainGrammar(text: string, targetLanguage: string): Promise<{ answer: string }> {
-    const systemPrompt = "You are an expert in grammar and of the chinese language.";
+    const systemPrompt = "You are an expert in grammar and of the chinese language. IMPORTANT: Do not include any additional text other than the explanation.";
     const userPrompt =
       `Explain the grammar and syntax in the following text in ${targetLanguage}, 
     do not include any additional text other than the explanation,
