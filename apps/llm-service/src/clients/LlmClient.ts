@@ -85,8 +85,8 @@ export class LlmClient {
    */
   async explainGrammar(text: string, targetLanguage: string): Promise<{ answer: string }> {
     const systemPrompt = "You are an expert in grammar and of the chinese language.";
-    const userPrompt = 
-    `Explain the grammar and syntax in the following text in ${targetLanguage}, 
+    const userPrompt =
+      `Explain the grammar and syntax in the following text in ${targetLanguage}, 
     do not include any additional text other than the explanation,
     
     use markdown to format the response so it can be displayed nicely on a front end :\n\n${text}\n\n`;
@@ -94,70 +94,5 @@ export class LlmClient {
     const response = await this.makeLlmRequest(systemPrompt, userPrompt);
 
     return { answer: response };
-  }
-
-  /**
-   * Summarizes the provided text using an LLM
-   * @param text The text to summarize
-   * @param maxLength Optional maximum length for the summary
-   * @returns The summarized text
-   */
-  async summarize(text: string, maxLength?: number): Promise<string> {
-    const systemPrompt = "You are an expert summarizer. Create concise summaries that capture the key points of the original text.";
-    let userPrompt = `Summarize the following text:\n\n${text}`;
-
-    if (maxLength) {
-      userPrompt += `\n\nKeep the summary under ${maxLength} characters.`;
-    }
-
-    return this.makeLlmRequest(systemPrompt, userPrompt);
-  }
-
-  /**
-   * Detects the language of the provided text using an LLM
-   * @param text The text to analyze
-   * @returns Object containing the detected language and confidence
-   */
-  async detectLanguage(text: string): Promise<{ detectedLanguage: string; confidence?: number }> {
-    const systemPrompt = "You are a language detection expert. Identify the language of the provided text accurately.";
-    const userPrompt = `Detect the language of the following text. Respond with the language code (e.g., 'en', 'es', 'fr') followed by the full language name in parentheses. If possible, include a confidence score between 0 and 1:\n\n${text}`;
-
-    const response = await this.makeLlmRequest(systemPrompt, userPrompt);
-
-    // Parse the response to extract language code and confidence
-    const languageCodeMatch = response.match(/^([a-z]{2,3})\s*\(/i);
-    const confidenceMatch = response.match(/confidence[:\s]*(0\.\d+|1\.0|1)/i);
-
-    const detectedLanguage = languageCodeMatch ? languageCodeMatch[1].toLowerCase() : response.trim().split(/\s+/)[0].toLowerCase();
-    const confidence = confidenceMatch ? parseFloat(confidenceMatch[1]) : undefined;
-
-    return { detectedLanguage, confidence };
-  }
-
-  /**
-   * Analyzes the sentiment of the provided text using an LLM
-   * @param text The text to analyze
-   * @returns Object containing sentiment analysis results
-   */
-  async analyzeSentiment(text: string): Promise<{ sentiment: string; score?: number; details?: string }> {
-    const systemPrompt = "You are a sentiment analysis expert. Analyze the sentiment of the provided text accurately.";
-    const userPrompt = `Analyze the sentiment of the following text. Classify it as 'positive', 'negative', or 'neutral'. If possible, include a sentiment score between -1 (very negative) and 1 (very positive). Also provide a brief explanation of your analysis:\n\n${text}`;
-
-    const response = await this.makeLlmRequest(systemPrompt, userPrompt);
-
-    // Parse the response to extract sentiment, score, and details
-    const sentimentMatch = response.match(/\b(positive|negative|neutral)\b/i);
-    const scoreMatch = response.match(/score[:\s]*(-?0\.\d+|-?1\.0|-?1)/i);
-
-    const sentiment = sentimentMatch ? sentimentMatch[1].toLowerCase() : "neutral";
-    const score = scoreMatch ? parseFloat(scoreMatch[1]) : undefined;
-
-    // Remove the sentiment classification and score from the details
-    let details = response;
-    if (sentimentMatch) details = details.replace(new RegExp(`\b${sentimentMatch[1]}\b`, 'i'), '');
-    if (scoreMatch) details = details.replace(scoreMatch[0], '');
-    details = details.trim();
-
-    return { sentiment, score, details };
   }
 }

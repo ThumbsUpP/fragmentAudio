@@ -4,9 +4,6 @@
 export enum ProcessingType {
   TRANSLATION = "translation",
   GRAMMAR = "grammar",
-  SUMMARIZATION = "summarization",
-  LANGUAGE_DETECTION = "language_detection",
-  SENTIMENT_ANALYSIS = "sentiment_analysis"
 }
 
 /**
@@ -70,68 +67,10 @@ export interface GrammarResult extends LlmProcessingBase {
   answer: string;
 }
 
-/**
- * Interface for text summarization results
- */
-export interface SummarizationResult extends LlmProcessingBase {
-  processingType: ProcessingType.SUMMARIZATION;
-
-  /**
-   * The summarized text content
-   */
-  summary: string;
-
-  /**
-   * The requested maximum length for the summary (if specified)
-   */
-  maxLength?: number;
-}
-
-/**
- * Interface for language detection results
- */
-export interface LanguageDetectionResult extends LlmProcessingBase {
-  processingType: ProcessingType.LANGUAGE_DETECTION;
-
-  /**
-   * The detected language code (e.g., "en", "es", "fr")
-   */
-  detectedLanguage: string;
-
-  /**
-   * Confidence score for the detection (0-1)
-   */
-  confidence?: number;
-}
-
-/**
- * Interface for sentiment analysis results
- */
-export interface SentimentAnalysisResult extends LlmProcessingBase {
-  processingType: ProcessingType.SENTIMENT_ANALYSIS;
-
-  /**
-   * The overall sentiment (positive, negative, neutral)
-   */
-  sentiment: string;
-
-  /**
-   * Numerical score representing sentiment (-1 to 1)
-   */
-  score?: number;
-
-  /**
-   * Additional details about the sentiment analysis
-   */
-  details?: string;
-}
 
 /**
  * Union type for all possible LLM processing results
  */
 export type LlmProcessingResult =
   | TranslationResult
-  | GrammarResult
-  | SummarizationResult
-  | LanguageDetectionResult
-  | SentimentAnalysisResult;
+  | GrammarResult;
