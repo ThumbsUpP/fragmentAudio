@@ -1,0 +1,132 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProcessingJobStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum TranslationTargetType {
+  VIDEO
+  SEGMENT
+  WORD
+}
+
+model Video {
+  id             String          @id @default(cuid())
+  externalId     String          @unique
+  title          String
+  sourceUrl      String?
+  sourceLanguage String          @default("zh")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  alignments     Alignment[]
+  jobs           ProcessingJob[]
+  translations   Translation[]
+
+  @@index([createdAt])
+}
+
+model ProcessingJob {
+  id        String              @id @default(cuid())
+  videoId   String?
+  video     Video?              @relation(fields: [videoId], references: [id], onDelete: SetNull)
+  status    ProcessingJobStatus @default(PENDING)
+  step      String?
+  error     String?
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+
+  @@index([status])
+  @@index([videoId])
+}
+
+model Alignment {
+  id        String    @id @default(cuid())
+  videoId   String
+  video     Video     @relation(fields: [videoId], references: [id], onDelete: Cascade)
+  provider  String    @default("stable-ts")
+  model     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  segments  Segment[]
+
+  @@index([videoId])
+}
+
+model Segment {
+  id                String               @id @default(cuid())
+  alignmentId       String
+  alignment         Alignment            @relation(fields: [alignmentId], references: [id], onDelete: Cascade)
+  externalSegmentId String?
+  index             Int
+  text              String
+  start             Float
+  end               Float
+  words             Word[]
+  translations      Translation[]
+  grammar           GrammarExplanation[]
+
+  @@unique([alignmentId, index])
+  @@index([alignmentId])
+}
+
+model Word {
+  id           String        @id @default(cuid())
+  segmentId    String
+  segment      Segment       @relation(fields: [segmentId], references: [id], onDelete: Cascade)
+  index        Int
+  text         String
+  pinyin       String?
+  start        Float
+  end          Float
+  translations Translation[]
+
+  @@unique([segmentId, index])
+  @@index([segmentId])
+}
+
+model Translation {
+  id         String                @id @default(cuid())
+  targetType TranslationTargetType
+  language   String
+  text       String
+  provider   String?
+  model      String?
+  createdAt  DateTime              @default(now())
+  updatedAt  DateTime              @updatedAt
+  videoId    String?
+  video      Video?                @relation(fields: [videoId], references: [id], onDelete: Cascade)
+  segmentId  String?
+  segment    Segment?              @relation(fields: [segmentId], references: [id], onDelete: Cascade)
+  wordId     String?
+  word       Word?                 @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@index([targetType, language])
+  @@index([videoId])
+  @@index([segmentId])
+  @@index([wordId])
+}
+
+model GrammarExplanation {
+  id             String   @id @default(cuid())
+  segmentId      String
+  segment        Segment  @relation(fields: [segmentId], references: [id], onDelete: Cascade)
+  language       String   @default("en")
+  answerMarkdown String
+  provider       String?
+  model          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([segmentId, language])
+  @@index([segmentId])
+}
