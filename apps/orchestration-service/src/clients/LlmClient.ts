@@ -11,7 +11,7 @@ export class LlmClient {
   private llmApiUrl: string;
 
   constructor() {
-    this.llmApiUrl = process.env.LLM_SERVICE_URL || "http://localhost:3002/api";
+    this.llmApiUrl = process.env.LLM_SERVICE_URL || "http://localhost:3002/api/llm";
   }
 
   /**

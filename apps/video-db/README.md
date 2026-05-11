@@ -1,77 +1,32 @@
-# Video Database Service
+# Video Database Service — legacy
 
-A TypeScript-based database service for storing and retrieving video data with associated JSON content.
+This service is the legacy TypeORM/Express database API used by the pre-v2 microservice architecture.
 
-## Features
+The v2 migration introduces `apps/api`, a modular Node monolith with Prisma and a new clean PostgreSQL schema. New backend work should target `apps/api`; this package remains only to keep the current system understandable while the migration is in progress.
 
-- Store video data with videoId, videoUrl, and JSON content
-- RESTful API for CRUD operations
-- Supports both SQLite (development) and PostgreSQL (production)
-- TypeORM for database management
+## Current runtime scope
 
-## API Endpoints
+The actual service currently exposes:
 
-- `GET /api/videos` - Get all video data entries
-- `GET /api/videos/:videoId` - Get video data by videoId
-- `POST /api/videos` - Create or update video data
-- `DELETE /api/videos/:videoId` - Delete video data by videoId
+- `GET /api/alignments` - get all alignment results
+- `GET /api/alignments/:videoId` - get one alignment result by video ID
+- `POST /api/alignments` - create or replace an alignment result
+- `DELETE /api/alignments/:videoId` - delete an alignment result
+- `GET /api/grammar/:videoId/:segmentId` - get a cached grammar explanation
+- `POST /api/grammar` - create or update a grammar explanation
+
+## Important notes
+
+- Despite older documentation, this service no longer exposes the generic `/api/videos` JSON API.
+- The implementation is PostgreSQL-oriented because the entities use `jsonb` columns.
+- `synchronize: true` is still enabled in the legacy TypeORM datasource and should not be copied into v2.
 
 ## Setup
 
-### Development
-
-1. Install dependencies:
-   ```
-   npm install
-   ```
-
-2. Run in development mode:
-   ```
-   npm run dev
-   ```
-
-### Production
-
-1. Build the project:
-   ```
-   npm run build
-   ```
-
-2. Set the `DATABASE_URL` environment variable to your PostgreSQL connection string:
-   ```
-   export DATABASE_URL=postgres://username:password@hostname:port/database
-   ```
-
-3. Start the server:
-   ```
-   npm start
-   ```
-
-## Example Usage
-
-### Storing Video Data
-
 ```bash
-curl -X POST http://localhost:3000/api/videos \
-  -H "Content-Type: application/json" \
-  -d '{
-    "videoId": "video123",
-    "videoUrl": "https://example.com/videos/video123.mp4",
-    "jsonData": {
-      "title": "Sample Video",
-      "duration": 120,
-      "transcription": {
-        "segments": [
-          {"start": 0, "end": 10, "text": "Hello world"},
-          {"start": 11, "end": 20, "text": "This is a sample video"}
-        ]
-      }
-    }
-  }'
+pnpm install
+pnpm --filter video-db type-check
+pnpm --filter video-db build
 ```
 
-### Retrieving Video Data
-
-```bash
-curl http://localhost:3000/api/videos/video123
-```
+For local runtime, set `DATABASE_URL` to a PostgreSQL connection string.

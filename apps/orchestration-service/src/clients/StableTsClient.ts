@@ -14,7 +14,7 @@ export class StableTsClient {
   private apiUrl: string;
 
   constructor() {
-    this.apiUrl = process.env.STABLE_TS_URL || "http://localhost:5001/stable-ts";
+    this.apiUrl = process.env.STABLE_TS_URL || "http://localhost:5000/stable-ts";
   }
 
   /**

@@ -12,7 +12,7 @@ export class TranslationClient {
   private apiUrl: string;
 
   constructor() {
-    this.apiUrl = process.env.LLM_SERVICE_URL || "http://localhost:1000/api/llm";
+    this.apiUrl = process.env.LLM_SERVICE_URL || "http://localhost:3002/api/llm";
   }
 
   /**

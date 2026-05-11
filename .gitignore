@@ -2,6 +2,9 @@ node_modules/
 .pnpm-debug.log
 .turbo/
 # Python junks files
+__pycache__/
+**/__pycache__/
+*.py[cod]
 apps/*/venv/
 apps/*/utils/__pycache__/
 
