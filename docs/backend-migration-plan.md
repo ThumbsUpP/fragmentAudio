@@ -126,6 +126,6 @@ Stores generated grammar explanations linked to a segment and language.
 - Remove `orchestration-service` once import jobs are local to `apps/api`.
 - Keep `stable-ts` as the alignment worker until a later dedicated decision.
 
-## v2 branch strategy
+## Branch strategy
 
-All migration PRs should target the `v2` branch until the new backend is functionally complete. The current legacy services can remain on the branch during the transition, but runtime configuration should progressively favor `apps/api`.
+Migration PRs now target `master` directly. The current legacy services can remain during the transition, but runtime configuration should progressively favor `apps/api`.
