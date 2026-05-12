@@ -6,6 +6,9 @@ __pycache__/
 **/__pycache__/
 *.py[cod]
 apps/*/venv/
+apps/*/.venv/
+.venv/
+venv/
 apps/*/utils/__pycache__/
 
 apps/*/dist/
