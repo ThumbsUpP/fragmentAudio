@@ -21,6 +21,15 @@ const isDatabaseConflict = (error: unknown) => {
   );
 };
 
+const isForeignKeyViolation = (error: unknown) => {
+  return Boolean(
+    error &&
+      typeof error === "object" &&
+      "code" in error &&
+      (error as { code?: string }).code === "23503"
+  );
+};
+
 export const errorHandler: ErrorRequestHandler = (error, _req, res, _next) => {
   if (error instanceof HttpError) {
     return res.status(error.statusCode).json({ error: error.message });
@@ -28,6 +37,10 @@ export const errorHandler: ErrorRequestHandler = (error, _req, res, _next) => {
 
   if (isDatabaseConflict(error)) {
     return res.status(409).json({ error: "Resource already exists" });
+  }
+
+  if (isForeignKeyViolation(error)) {
+    return res.status(404).json({ error: "Related resource not found" });
   }
 
   console.error(error);

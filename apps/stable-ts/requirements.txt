@@ -6,3 +6,4 @@ pysrt
 jieba
 requests
 pypinyin
+pytest
