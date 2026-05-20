@@ -1,4 +1,5 @@
 import { pool } from "../../db/pool.js";
+import { createId } from "../../shared/ids.js";
 import type { PaginationParams } from "../../shared/validation/pagination.js";
 import type { AlignmentDetail, SegmentDto, WordDto } from "./alignment.types.js";
 
@@ -60,6 +61,35 @@ const mapAlignment = (row: AlignmentRow, segments: SegmentDto[]): AlignmentDetai
 });
 
 export class AlignmentRepository {
+  async createAlignment(videoId: string, provider: string, model: string | null): Promise<string> {
+    const result = await pool.query<{ id: string }>(
+      `INSERT INTO alignments (id, video_id, provider, model)
+       VALUES ($1, $2, $3, $4)
+       RETURNING id`,
+      [createId("ali"), videoId, provider, model]
+    );
+    return result.rows[0].id;
+  }
+
+  async createSegmentsAndWords(alignmentId: string, segments: Array<{ externalSegmentId: string | null; index: number; text: string; start: number; end: number; words: Array<{ index: number; text: string; pinyin: string | null; start: number; end: number }> }>): Promise<void> {
+    for (const segment of segments) {
+      const segmentResult = await pool.query<{ id: string }>(
+        `INSERT INTO segments (id, alignment_id, external_segment_id, index, text, start, "end")
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
+         RETURNING id`,
+        [createId("seg"), alignmentId, segment.externalSegmentId, segment.index, segment.text, segment.start, segment.end]
+      );
+      const segmentId = segmentResult.rows[0].id;
+
+      for (const word of segment.words) {
+        await pool.query(
+          `INSERT INTO words (id, segment_id, index, text, pinyin, start, "end")
+           VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+          [createId("wrd"), segmentId, word.index, word.text, word.pinyin, word.start, word.end]
+        );
+      }
+    }
+  }
   async getLatestAlignmentForVideo(videoId: string): Promise<AlignmentDetail | null> {
     const alignmentResult = await pool.query<AlignmentRow>(
       `SELECT id, video_id, provider, model, created_at, updated_at
