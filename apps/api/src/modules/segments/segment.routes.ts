@@ -28,6 +28,14 @@ segmentRouter.get(
 );
 
 segmentRouter.post(
+  "/:segmentId/translations/regenerate",
+  asyncHandler(async (req, res) => {
+    const translation = await translationService.regenerateForSegment(req.params.segmentId, req.body);
+    return res.status(201).json(translation);
+  })
+);
+
+segmentRouter.post(
   "/:segmentId/translations",
   asyncHandler(async (req, res) => {
     const translation = await translationService.createForSegment(req.params.segmentId, req.body);
@@ -41,6 +49,14 @@ segmentRouter.get(
     const language = typeof req.query.language === "string" ? req.query.language : undefined;
     const explanation = await grammarService.getForSegment(req.params.segmentId, language);
     return res.status(200).json(explanation);
+  })
+);
+
+segmentRouter.post(
+  "/:segmentId/grammar/regenerate",
+  asyncHandler(async (req, res) => {
+    const explanation = await grammarService.regenerateForSegment(req.params.segmentId, req.body);
+    return res.status(201).json(explanation);
   })
 );
 

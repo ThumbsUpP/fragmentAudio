@@ -18,16 +18,20 @@ This package now provides the first database-backed API slice:
 - `GET /api/videos/:videoId/alignment`
 - `GET /api/videos/:videoId/segments`
 - `GET /api/videos/:videoId/translations`
+- `POST /api/videos/:videoId/translations/regenerate`
 - `POST /api/videos/:videoId/translations`
 - `GET /api/jobs`
 - `GET /api/jobs/:jobId`
 - `GET /api/segments/:segmentId/words`
 - `GET /api/segments/:segmentId/translations`
+- `POST /api/segments/:segmentId/translations/regenerate`
 - `POST /api/segments/:segmentId/translations`
 - `GET /api/segments/:segmentId/grammar`
+- `POST /api/segments/:segmentId/grammar/regenerate`
 - `POST /api/segments/:segmentId/grammar`
 - `GET /api/words/:wordId`
 - `GET /api/words/:wordId/translations`
+- `POST /api/words/:wordId/translations/regenerate`
 - `POST /api/words/:wordId/translations`
 
 The legacy services remain available while features are migrated into this package.
@@ -74,12 +78,28 @@ curl -X POST http://localhost:4000/api/segments/segment_123/translations \
   -d '{"language":"fr","text":"Traduction du segment","provider":"manual"}'
 ```
 
+Regenerate a segment translation through the local monolith LLM client:
+
+```bash
+curl -X POST http://localhost:4000/api/segments/segment_123/translations/regenerate \
+  -H "Content-Type: application/json" \
+  -d '{"language":"fr"}'
+```
+
 Store a grammar explanation:
 
 ```bash
 curl -X POST http://localhost:4000/api/segments/segment_123/grammar \
   -H "Content-Type: application/json" \
   -d '{"language":"fr","answerMarkdown":"Explication grammaticale."}'
+```
+
+Regenerate a grammar explanation through the local monolith LLM client:
+
+```bash
+curl -X POST http://localhost:4000/api/segments/segment_123/grammar/regenerate \
+  -H "Content-Type: application/json" \
+  -d '{"language":"fr"}'
 ```
 
 ## v2 migration

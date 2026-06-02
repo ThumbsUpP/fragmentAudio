@@ -26,6 +26,14 @@ wordRouter.get(
 );
 
 wordRouter.post(
+  "/:wordId/translations/regenerate",
+  asyncHandler(async (req, res) => {
+    const translation = await translationService.regenerateForWord(req.params.wordId, req.body);
+    return res.status(201).json(translation);
+  })
+);
+
+wordRouter.post(
   "/:wordId/translations",
   asyncHandler(async (req, res) => {
     const translation = await translationService.createForWord(req.params.wordId, req.body);

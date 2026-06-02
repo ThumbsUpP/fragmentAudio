@@ -99,6 +99,14 @@ videoRouter.get(
 );
 
 videoRouter.post(
+  "/:videoId/translations/regenerate",
+  asyncHandler(async (req, res) => {
+    const translation = await translationService.regenerateForVideo(req.params.videoId, req.body);
+    return res.status(201).json(translation);
+  })
+);
+
+videoRouter.post(
   "/:videoId/translations",
   asyncHandler(async (req, res) => {
     const translation = await translationService.createForVideo(req.params.videoId, req.body);

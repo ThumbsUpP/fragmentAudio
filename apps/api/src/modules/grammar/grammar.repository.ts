@@ -53,4 +53,27 @@ export class GrammarRepository {
 
     return mapGrammarExplanation(result.rows[0]);
   }
+
+  async upsertForSegment(
+    segmentId: string,
+    input: CreateGrammarExplanationInput
+  ): Promise<GrammarExplanationDetail> {
+    const id = createId("grammar");
+    const result = await pool.query<GrammarExplanationRow>(
+      `INSERT INTO grammar_explanations (
+         id, segment_id, language, answer_markdown, provider, model
+       )
+       VALUES ($1, $2, $3, $4, $5, $6)
+       ON CONFLICT (segment_id, language)
+       DO UPDATE SET
+         answer_markdown = EXCLUDED.answer_markdown,
+         provider = EXCLUDED.provider,
+         model = EXCLUDED.model,
+         updated_at = NOW()
+       RETURNING id, segment_id, language, answer_markdown, provider, model, created_at, updated_at`,
+      [id, segmentId, input.language, input.answerMarkdown, input.provider, input.model]
+    );
+
+    return mapGrammarExplanation(result.rows[0]);
+  }
 }

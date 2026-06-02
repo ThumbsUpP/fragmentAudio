@@ -138,6 +138,18 @@ export class AlignmentRepository {
     return Number(result.rows[0]?.count ?? 0);
   }
 
+  async getSegmentById(segmentId: string): Promise<SegmentDto | null> {
+    const result = await pool.query<SegmentRow>(
+      `SELECT id, external_segment_id, index, text, start, "end"
+       FROM segments
+       WHERE id = $1`,
+      [segmentId]
+    );
+
+    const row = result.rows[0];
+    return row ? mapSegment(row) : null;
+  }
+
   private async listSegmentsForAlignment(
     alignmentId: string,
     { limit, offset }: PaginationParams,
