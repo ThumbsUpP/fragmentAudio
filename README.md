@@ -5,6 +5,7 @@ The default runtime is now:
 
 - **api**: Node/Express monolith for database routes, import jobs, translations, and grammar generation
 - **stable-ts**: Python Whisper/stable-ts alignment worker called by `api`
+- **admin-web**: static content administration frontend for `api`
 
 The legacy Node services (`video-db`, `llm-service`, and `orchestration-service`) remain in the repo for reference during migration cleanup, but they are no longer started by the default PM2 configuration.
 
@@ -25,6 +26,15 @@ Create environment files:
 cp .env.example apps/api/.env
 cp .env.example apps/stable-ts/.env
 ```
+
+Start the API and the admin frontend:
+
+```bash
+pnpm --filter api start
+pnpm --filter admin-web start
+```
+
+Open the admin frontend at `http://localhost:5173`.
 
 ## Process Management with PM2
 

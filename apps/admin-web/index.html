@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FragmentAudio Admin</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">FragmentAudio</p>
+          <h1>Administration contenus</h1>
+        </div>
+        <form id="api-form" class="api-form">
+          <label for="api-url">API</label>
+          <input id="api-url" name="apiUrl" type="url" autocomplete="off" />
+          <button type="submit">Connecter</button>
+        </form>
+      </header>
+
+      <main class="shell">
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Actions</h2>
+            </div>
+            <button id="refresh-button" class="command" type="button">Actualiser</button>
+            <button id="new-video-button" class="command" type="button">Nouveau contenu</button>
+            <button id="import-button" class="command" type="button">Importer audio + SRT</button>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Jobs</h2>
+              <button id="jobs-refresh-button" class="ghost" type="button">Rafraichir</button>
+            </div>
+            <div id="jobs-list" class="jobs-list"></div>
+          </section>
+        </aside>
+
+        <section class="workspace">
+          <section class="toolbar">
+            <div>
+              <p class="eyebrow">Bibliotheque</p>
+              <h2>Videos</h2>
+            </div>
+            <div class="search">
+              <label for="filter-input">Filtrer</label>
+              <input id="filter-input" type="search" placeholder="Titre, langue, ID" />
+            </div>
+          </section>
+
+          <section class="content-grid">
+            <div class="list-pane">
+              <div id="video-list" class="video-list"></div>
+            </div>
+
+            <article id="detail-pane" class="detail-pane">
+              <div class="empty-state">
+                <h2>Aucun contenu selectionne</h2>
+                <p>Selectionne une video dans la liste ou cree un nouveau contenu.</p>
+              </div>
+            </article>
+          </section>
+        </section>
+      </main>
+
+      <dialog id="video-dialog">
+        <form id="video-form" method="dialog" class="dialog-form">
+          <header>
+            <h2>Nouveau contenu</h2>
+            <button class="icon-button" value="cancel" aria-label="Fermer" type="submit">x</button>
+          </header>
+          <label>
+            Titre
+            <input name="title" required />
+          </label>
+          <label>
+            External ID
+            <input name="externalId" required />
+          </label>
+          <label>
+            Langue source
+            <input name="sourceLanguage" value="zh" />
+          </label>
+          <label>
+            URL source
+            <input name="sourceUrl" type="url" />
+          </label>
+          <footer>
+            <button class="ghost" value="cancel" type="submit">Annuler</button>
+            <button id="video-submit-button" value="default" type="submit">Creer</button>
+          </footer>
+        </form>
+      </dialog>
+
+      <dialog id="import-dialog">
+        <form id="import-form" method="dialog" class="dialog-form">
+          <header>
+            <h2>Importer audio + SRT</h2>
+            <button class="icon-button" value="cancel" aria-label="Fermer" type="submit">x</button>
+          </header>
+          <label>
+            Titre
+            <input name="title" required />
+          </label>
+          <label>
+            External ID
+            <input name="externalId" required />
+          </label>
+          <label>
+            Langue source
+            <input name="sourceLanguage" value="zh" />
+          </label>
+          <label>
+            URL source
+            <input name="sourceUrl" type="url" />
+          </label>
+          <label>
+            Audio
+            <input name="audio" type="file" accept="audio/*,video/*" required />
+          </label>
+          <label>
+            SRT
+            <input name="srt" type="file" accept=".srt,text/plain" required />
+          </label>
+          <footer>
+            <button class="ghost" value="cancel" type="submit">Annuler</button>
+            <button id="import-submit-button" value="default" type="submit">Importer</button>
+          </footer>
+        </form>
+      </dialog>
+
+      <dialog id="translation-dialog">
+        <form id="translation-form" method="dialog" class="dialog-form">
+          <header>
+            <h2 id="translation-title">Traduction</h2>
+            <button class="icon-button" value="cancel" aria-label="Fermer" type="submit">x</button>
+          </header>
+          <input name="targetType" type="hidden" />
+          <input name="targetId" type="hidden" />
+          <label>
+            Langue
+            <input name="language" value="fr" required />
+          </label>
+          <label>
+            Texte
+            <textarea name="text" rows="7" required></textarea>
+          </label>
+          <footer>
+            <button class="ghost" value="cancel" type="submit">Annuler</button>
+            <button value="default" type="submit">Enregistrer</button>
+          </footer>
+        </form>
+      </dialog>
+
+      <div id="toast" class="toast" hidden></div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
