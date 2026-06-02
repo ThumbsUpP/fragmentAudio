@@ -1,4 +1,8 @@
 import { Router, type IRouter } from "express";
+import multer from "multer";
+import { mkdirSync } from "node:fs";
+import { join } from "node:path";
+import { badRequest } from "../../shared/http/errors.js";
 import { AlignmentService } from "../alignments/alignment.service.js";
 import { asyncHandler } from "../../shared/http/asyncHandler.js";
 import { parsePagination } from "../../shared/validation/pagination.js";
@@ -10,6 +14,38 @@ const alignmentService = new AlignmentService();
 const translationService = new TranslationService();
 
 export const videoRouter: IRouter = Router();
+const uploadDir = join(process.cwd(), ".uploads");
+mkdirSync(uploadDir, { recursive: true });
+const upload = multer({ dest: uploadDir });
+
+videoRouter.post(
+  "/import",
+  upload.fields([{ name: "audio", maxCount: 1 }, { name: "srt", maxCount: 1 }]),
+  asyncHandler(async (req, res) => {
+    const files = req.files as Record<string, Express.Multer.File[]> | undefined;
+    const audio = files?.audio?.[0];
+    const srt = files?.srt?.[0];
+    if (!audio || !srt) {
+      throw badRequest("audio and srt files are required");
+    }
+    const externalId = typeof req.body.externalId === "string" ? req.body.externalId.trim() : "";
+    const title = typeof req.body.title === "string" ? req.body.title.trim() : "";
+    if (!externalId || !title) {
+      throw badRequest("externalId and title are required");
+    }
+
+    const result = await videoService.importAudioAndSrt({
+      externalId,
+      title,
+      sourceLanguage: typeof req.body.sourceLanguage === "string" ? req.body.sourceLanguage : undefined,
+      sourceUrl: typeof req.body.sourceUrl === "string" ? req.body.sourceUrl : undefined,
+      audioPath: audio.path,
+      srtPath: srt.path,
+    });
+
+    return res.status(201).json(result);
+  })
+);
 
 videoRouter.get(
   "/",

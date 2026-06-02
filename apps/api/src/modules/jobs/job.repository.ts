@@ -25,6 +25,24 @@ const mapJob = (row: JobRow): JobSummary => ({
 });
 
 export class JobRepository {
+  async createJob(id: string, videoId: string): Promise<JobSummary> {
+    const result = await pool.query<JobRow>(
+      `INSERT INTO processing_jobs (id, video_id, status, step)
+       VALUES ($1, $2, 'PROCESSING', 'UPLOADED')
+       RETURNING id, video_id, null::text AS video_title, status, step, error, created_at, updated_at`,
+      [id, videoId]
+    );
+
+    return mapJob(result.rows[0]);
+  }
+
+  async updateJobStatus(id: string, status: JobRow["status"], step: string, error: string | null = null): Promise<void> {
+    await pool.query(
+      `UPDATE processing_jobs SET status = $2, step = $3, error = $4, updated_at = NOW() WHERE id = $1`,
+      [id, status, step, error]
+    );
+  }
+
   async listJobs({ limit, offset }: PaginationParams): Promise<JobSummary[]> {
     const result = await pool.query<JobRow>(
       `SELECT pj.id, pj.video_id, v.title AS video_title, pj.status, pj.step, pj.error, pj.created_at, pj.updated_at
