@@ -2,7 +2,7 @@
 
 This service is the legacy TypeORM/Express database API used by the pre-v2 microservice architecture.
 
-The v2 migration introduces `apps/api`, a modular Node monolith with Prisma and a new clean PostgreSQL schema. New backend work should target `apps/api`; this package remains only to keep the current system understandable while the migration is in progress.
+The v2 migration introduces `apps/api`, a modular Node monolith with Prisma and a new clean PostgreSQL schema. New backend work should target `apps/api`; this package remains only as migration reference until it is physically removed.
 
 ## Current runtime scope
 

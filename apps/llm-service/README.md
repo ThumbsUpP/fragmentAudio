@@ -1,6 +1,8 @@
-# LLM Service
+# LLM Service — legacy
 
-A versatile microservice for various language processing tasks using external LLM models.
+This is the legacy LLM microservice from the pre-v2 architecture.
+
+The v2 monolith in `apps/api` now owns translation and grammar generation through its local LLM client and stores generated rows directly in the v2 database. New backend work should target `apps/api`; this package remains only as migration reference until it is physically removed.
 
 ## Features
 

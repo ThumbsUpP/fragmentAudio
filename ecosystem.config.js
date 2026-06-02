@@ -1,35 +1,16 @@
 module.exports = {
   apps: [
     {
-      name: 'llm-service',
-      script: 'npm',
-      args: 'run start',
-      cwd: './apps/llm-service',
+      name: 'api',
+      script: 'pnpm',
+      args: 'start',
+      cwd: './apps/api',
       source_map_support: true,
       watch: true,
-      env_file: './apps/llm-service/.env',
+      env_file: './apps/api/.env',
       max_memory_restart: '512M',
-      error_file: './logs/llm-service-error.log',
-      out_file: './logs/llm-service-out.log',
-      max_restarts: 10,
-      min_uptime: '5s',
-      exec_mode: 'cluster',
-      instances: 1,
-      exp_backoff_restart_delay: 100,
-      merge_logs: true,
-      log_date_format: 'YYYY-MM-DD HH:mm:ss Z'
-    },
-    {
-      name: 'orchestration-service',
-      script: 'npm',
-      args: 'run start',
-      cwd: './apps/orchestration-service',
-      source_map_support: true,
-      watch: true,
-      env_file: './apps/orchestration-service/.env',
-      max_memory_restart: '512M',
-      error_file: './logs/orchestration-service-error.log',
-      out_file: './logs/orchestration-service-out.log',
+      error_file: './logs/api-error.log',
+      out_file: './logs/api-out.log',
       max_restarts: 10,
       min_uptime: '5s',
       exec_mode: 'cluster',
@@ -53,25 +34,6 @@ module.exports = {
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       kill_timeout: 3000,
       autorestart: true
-    },
-    {
-      name: 'video-db',
-      script: 'npm',
-      args: 'run start',
-      cwd: './apps/video-db',
-      source_map_support: true,
-      watch: true,
-      env_file: './apps/video-db/.env',
-      max_memory_restart: '512M',
-      error_file: './logs/video-db-error.log',
-      out_file: './logs/video-db-out.log',
-      max_restarts: 10,
-      min_uptime: '5s',
-      exec_mode: 'cluster',
-      instances: 1,
-      exp_backoff_restart_delay: 100,
-      merge_logs: true,
-      log_date_format: 'YYYY-MM-DD HH:mm:ss Z'
     }
   ],
 
@@ -82,7 +44,7 @@ module.exports = {
       ref: 'origin/main',
       repo: 'git-repository-url',
       path: '/var/www/production',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'pnpm install && pnpm --filter api build && pm2 reload ecosystem.config.js --env production',
       env: {
         NODE_ENV: 'production'
       }
@@ -93,7 +55,7 @@ module.exports = {
       ref: 'origin/develop',
       repo: 'git-repository-url',
       path: '/var/www/development',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env development',
+      'post-deploy': 'pnpm install && pnpm --filter api build && pm2 reload ecosystem.config.js --env development',
       env: {
         NODE_ENV: 'development'
       }

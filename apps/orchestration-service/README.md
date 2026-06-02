@@ -1,6 +1,8 @@
-# Orchestration Service
+# Orchestration Service — legacy
 
-This service coordinates the processing of audio files through multiple microservices in the fragmentAudio project.
+This is the legacy orchestration microservice from the pre-v2 architecture.
+
+The v2 monolith in `apps/api` now owns import jobs, calls `stable-ts` directly, persists alignments/segments/words, and exposes job polling. New backend work should target `apps/api`; this package remains only as migration reference until it is physically removed.
 
 ## Overview
 

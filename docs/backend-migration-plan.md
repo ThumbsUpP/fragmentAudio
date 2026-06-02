@@ -126,6 +126,12 @@ Stores generated grammar explanations linked to a segment and language.
 - Remove `orchestration-service` once import jobs are local to `apps/api`.
 - Keep `stable-ts` as the alignment worker until a later dedicated decision.
 
+Current phase 5 status:
+
+- Default PM2 runtime now starts `apps/api` and `apps/stable-ts` only.
+- Legacy Node services remain in the repo as migration reference, but are no longer part of the default runtime.
+- Root docs and shared environment defaults now point to the monolith-first backend.
+
 ## Branch strategy
 
 Migration PRs now target `master` directly. The current legacy services can remain during the transition, but runtime configuration should progressively favor `apps/api`.
