@@ -2,12 +2,12 @@
   "name": "stable-ts",
   "version": "1.0.0",
   "scripts": {
-    "venv": "bash -c 'source venv/bin/activate'",
+    "venv": "python3 -m venv venv",
     "build": "echo 'No build step for Python app'",
-    "lint": "",
-    "test": "pytest",
-    "start": "bash -c 'source venv/bin/activate && venv/bin/python app.py'",
-    "installPython": "pip install -r requirements.txt",
-    "dev": "bash -c 'source venv/bin/activate && venv/bin/python app.py'"
+    "lint": "venv/bin/python -m py_compile app.py align.py models.py",
+    "test": "venv/bin/python -m pytest",
+    "start": "bash -c 'set -a; [ ! -f .env ] || source .env; set +a; venv/bin/python app.py'",
+    "installPython": "venv/bin/python -m pip install -r requirements.txt",
+    "dev": "bash -c 'set -a; [ ! -f .env ] || source .env; set +a; venv/bin/python app.py'"
   }
 }
