@@ -17,6 +17,9 @@ apps/api
 
 apps/stable-ts
   └─ Python alignment worker called by apps/api
+
+apps/admin-web
+  └─ Static content administration UI calling apps/api
 ```
 
 The previous services stay available during the migration so each capability can be ported and verified independently.
@@ -131,6 +134,41 @@ Current phase 5 status:
 - Default PM2 runtime now starts `apps/api` and `apps/stable-ts` only.
 - Legacy Node services remain in the repo as migration reference, but are no longer part of the default runtime.
 - Root docs and shared environment defaults now point to the monolith-first backend.
+- A first static admin frontend exists in `apps/admin-web` for creating video records, importing audio/SRT content, listing videos/jobs, and triggering translation/grammar actions.
+- A Neon PostgreSQL database has been connected through `DATABASE_URL`; the lightweight SQL migration runner successfully applied the v2 schema to the remote database.
+- The API/stable-ts integration has been exercised from the admin import path. `stable-ts` must be running on port `5000` for audio/SRT imports to complete.
+- `apps/api` now returns an explicit `503` when `stable-ts` is unreachable instead of surfacing an opaque internal server error.
+
+## 2026-06-02 implementation notes
+
+Completed today:
+
+- Connected the v2 API to a Neon PostgreSQL database via `apps/api/.env`.
+- Ran `pnpm --filter api db:migrate` successfully against Neon, creating the v2 schema.
+- Added `apps/admin-web`, a small static administration UI for the current API surface.
+- Documented `admin-web` in the root README and added a package script to serve it locally on port `5173`.
+- Adjusted the admin frontend so a VPS-hosted page derives its API URL from the current host, for example `http://46.202.129.204:5173` calls `http://46.202.129.204:4000`.
+- Started and verified the API on port `4000`.
+- Started and verified the `stable-ts` Flask worker on port `5000`; `GET /stable-ts` returns `405`, which confirms the route exists and only accepts `POST`.
+- Improved `StableTsClient` error handling so network failures to the worker become explicit service-unavailable responses.
+- Improved admin error parsing so API responses shaped as `{ "error": "..." }` are shown to the user.
+
+Validation performed:
+
+- `pnpm --filter api build`
+- `pnpm --filter api db:migrate`
+- `GET /health` returned `200`.
+- `GET /api/videos` returned `200` against the Neon database.
+- `GET /stable-ts` returned `405 Method Not Allowed`, confirming the worker is reachable and the POST-only route is registered.
+
+Known follow-ups:
+
+- Keep `apps/api` and `apps/stable-ts` managed by PM2 or another supervisor on the VPS instead of ad-hoc shell sessions.
+- Decide whether `apps/admin-web` should remain static or move to a Vite/React app once the admin UX grows.
+- Add import-path automated coverage with a mocked `stable-ts` response.
+- Add better operational logging around upload/import jobs, including stable-ts response bodies and failed job details.
+- Clean up temporary upload files left under `apps/api/.uploads` from interrupted or failed manual tests.
+- Replace the lightweight SQL runner with Prisma migrations/client once dependencies are activated.
 
 ## Branch strategy
 
